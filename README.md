@@ -1,6 +1,18 @@
 # Le P'tit Libé
 
-Libération lance [Le P’tit Libé](http://www.liberation.fr/apps/ptit-libe), pour expliquer l’actualité aux enfants. A travers des dossiers pédagogiques et ludiques, la rédaction décrypte les grands sujets de société pour les petits citoyens.
+[Libération](http://www.liberation.fr) lance [Le P’tit Libé](http://www.liberation.fr/apps/ptit-libe), pour expliquer l’actualité aux enfants. A travers des dossiers pédagogiques et ludiques, la rédaction décrypte les grands sujets de société pour les petits citoyens.
+
+# Powered by
+
+* [AngularJS](https://github.com/angular/angular.js)
+* [Babel](https://github.com/babel/babel)
+* [lodash](https://github.com/lodash/lodash)
+* [Gulp](https://github.com/gulpjs/gulp)
+* [Bootstrap](https://github.com/twbs/bootstrap)
+* [Less.js](https://github.com/less/less.js)
+* [Jade](https://github.com/jadejs/jade)
+* [Pym.js](https://github.com/nprapps/pym.js)
+* ...
 
 ## License
 
