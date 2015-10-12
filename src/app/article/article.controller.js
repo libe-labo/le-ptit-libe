@@ -12,6 +12,11 @@ class ArticleController {
         $scope.getTitle = this.getTitle.bind(this);
         $scope.getArticleTitle = this.getArticleTitle.bind(this);
         $scope.getVignetteImage = this.getVignetteImage.bind(this);
+        $scope.$parent.getChapo = this.getChapo.bind(this);
+    }
+
+    getChapo () {
+        return this.titles.chapo;
     }
 
     getCurrentArticle () {
