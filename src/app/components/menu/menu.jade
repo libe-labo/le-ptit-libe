@@ -14,10 +14,13 @@ div.menu--wrapper(ng-controller="MenuController")
                                     ng-class='getVignetteClass(idx)')
                 vignette(image-src="getVignetteImage(idx)", article-id="idx")
                 a(ng-bind-html="getTitle(idx)", ui-sref="article({ release : getReleaseN() , article : idx })", ui-sref-opts="{reload:true}")
-    div.row.centered
-        br
-        br
-        a.mail(href="mailto:LePtitLibe@liberation.fr", target="_blank")
-            img(src="assets/images/mail.svg")
+    div.row
+        p.centered(style="margin-top:10em;")
+            | Tu veux des nouvelles
             br
-            | Ecris-nous
+            | du P'tit Libé&nbsp;?
+        p.centered
+            a.mail(href="", target="_blank")
+                img(src="assets/images/mail.svg")
+                br
+                | inscris-toi
