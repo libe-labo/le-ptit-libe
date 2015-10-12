@@ -1,7 +1,5 @@
 'use strict';
 
-import { addNbSp } from '../utils/utils';
-
 class PageController {
     constructor ($scope, $stateParams, $state) {
         'ngInject';
@@ -16,6 +14,7 @@ class PageController {
         $scope.getBodyStyle = this.getBodyStyle.bind(this);
         $scope.getBodyClass = this.getBodyClass.bind(this);
         $scope.getCartelStyle = this.getCartelStyle.bind(this);
+        $scope.shareOnFacebook = this.shareOnFacebook.bind(this);
         $scope.getDownloadHref = this.getDownloadHref.bind(this);
     }
 
@@ -44,6 +43,13 @@ class PageController {
 
     getDownloadHref () {
         return `assets/pdf/le-ptit-libe-${String(this.$stateParams.release)}.pdf`;
+    }
+
+    shareOnFacebook () {
+        var url = encodeURIComponent(window.location.origin + window.location.pathname +
+                                     `/#/${this.$stateParams.release}/`),
+            link = 'http://www.facebook.com/sharer/sharer.php?u=' + url;
+        window.open(link, '', 'width=575,height=400,menubar=no,toolbar=no');
     }
 }
 
