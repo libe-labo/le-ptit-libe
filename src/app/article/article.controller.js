@@ -12,42 +12,6 @@ class ArticleController {
         $scope.getTitle = this.getTitle.bind(this);
         $scope.getArticleTitle = this.getArticleTitle.bind(this);
         $scope.getVignetteImage = this.getVignetteImage.bind(this);
-
-        // Remove in prod
-        // window.setTimeout(function() {
-        //     window.ContentTools.StylePalette.add([
-        //         new window.ContentTools.Style('Coloré', 'color-fg', ['p']),
-        //         new window.ContentTools.Style('Majuscules', 'uppercase', ['p']),
-        //         new window.ContentTools.Style('Libé Sans Rond', 'libesansrond', ['p']),
-        //     ]);
-        //
-        //     var editor;
-        //     editor = window.ContentTools.EditorApp.get();
-        //     editor.init('*[data-editable]', 'data-name');
-        //
-        //     editor.bind('save', function(regions) {
-        //         this.busy(true);
-        //
-        //         $http({
-        //             url : `http://${window.location.hostname}:3003/save`,
-        //             method : 'POST',
-        //             headers : { 'Content-Type': undefined },
-        //             data : {
-        //                 release : $stateParams.release,
-        //                 article : $stateParams.article,
-        //                 content : regions.content
-        //             }
-        //         }).then(function(response) {
-        //             this.busy(false);
-        //
-        //             if (response.status === 200) {
-        //                 new window.ContentTools.FlashUI('ok');
-        //             } else {
-        //                 new window.ContentTools.FlashUI('no');
-        //             }
-        //         });
-        //     });
-        // }, 1000);
     }
 
     getCurrentArticle () {
