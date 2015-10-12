@@ -4,10 +4,6 @@ class PageController {
     constructor ($scope, $stateParams, $state) {
         'ngInject';
 
-        if ([1].indexOf(parseInt($stateParams.release)) < 0) {
-            $state.go('menu', { release : 1 });
-        }
-
         this.$stateParams = $stateParams;
 
         $scope.getCurrentRelease = this.getCurrentRelease.bind(this);
@@ -22,6 +18,13 @@ class PageController {
             ['#f2a73b', '#e85a24'],
             ['#81bb3f', '#2f6c34']
         ];
+
+        $scope.$root.$on('$stateChangeStart', function(ev, toState, toParams) {
+            if (toState.name === 'menu' && [1].indexOf(parseInt(toParams.release)) < 0) {
+                ev.preventDefault();
+                $state.go('menu', { release : '1' }, { reload : true });
+            }
+        });
     }
 
     getCurrentRelease () {

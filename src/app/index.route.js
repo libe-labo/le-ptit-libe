@@ -33,7 +33,7 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
             resolve: { titles : resolve }
         })
         .state('article', {
-            url: '/:release/:article',
+            url: '/:release/:article/',
             templateUrl: 'app/article/article.html',
             controller: 'ArticleController',
             controllerAs: 'article',
