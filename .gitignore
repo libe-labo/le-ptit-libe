@@ -6,9 +6,9 @@ node_modules/
 bower_components/
 dist/
 
-src/app/releases/
-src/assets/content/
+src/app/releases/*/*.html
+src/assets/content/*.json
 src/assets/images/1/
-src/assets/images/menu/
+src/assets/images/menu/*.svg
 src/assets/images/background-*
-src/assets/pdf/
+src/assets/pdf/*.pdf
