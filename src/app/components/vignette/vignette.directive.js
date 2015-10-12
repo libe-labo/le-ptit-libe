@@ -1,6 +1,6 @@
 'use strict';
 
-export function VignetteDirective($rootScope) {
+export function VignetteDirective() {
     'ngInject';
 
     let directive = {

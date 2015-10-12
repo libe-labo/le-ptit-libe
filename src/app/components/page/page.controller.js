@@ -29,6 +29,7 @@ class PageController {
     }
 
     getBodyStyle () {
+        if (this.$stateParams.release == null) { return { }; }
         return {
             'background-color' : this.colors[this.$stateParams.release][1],
             'background-image' : `url(assets/images/background-${this.$stateParams.release}.svg),` +
