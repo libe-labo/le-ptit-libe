@@ -15,6 +15,17 @@ class MenuController {
         $rootScope.$on('$viewContentLoaded', function() {
             $anchorScroll('content');
         });
+
+        $(window).off('resize.menu__item');
+        $(window).on('resize.menu__item', _.debounce(() => {
+            var height = 0;
+            $('.menu__item').each(function() {
+                $(this).css('height', 'auto');
+                height = _.max([height, $(this).innerHeight()]);
+            });
+            $('.menu__item').css('height', height);
+        }, 200));
+        $(window).trigger('resize');
     }
 
     getReleaseN () {
