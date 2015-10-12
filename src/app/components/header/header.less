@@ -1,0 +1,56 @@
+.header {
+    width: 50%;
+    max-width: 640px;
+    margin: 0 auto;
+
+    text-align: center;
+
+    h1 {
+        display: none;
+    }
+
+    img {
+        width: 200px;
+    }
+
+    &__intro {
+        margin: 2em 0;
+        padding: 1em 0;
+
+        border-top: 3pt solid #000;
+        border-bottom: 3pt solid #000;
+
+        overflow-y: hidden;
+
+        transition: padding .5s linear, border-width .5s linear;
+
+        &__inner {
+            margin: 0;
+            padding: 0;
+
+            text-align: left;
+
+            opacity: 1;
+
+            transition: height .5s linear, opacity .5s linear;
+        }
+
+        &--folded {
+            padding: 0;
+
+            border-width: 2pt;
+
+            &__inner {
+                height: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        width: auto;
+        max-width: 100%;
+        margin: 0 1em;
+    }
+}

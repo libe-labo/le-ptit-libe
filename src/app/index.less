@@ -1,0 +1,57 @@
+// bower:less
+// endbower
+
+body {
+    padding: 2em 0;
+
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: bottom left;
+
+    font-family: 'syntheselibeweb', sans-serif;
+    color: #000;
+
+    overflow-x: hidden;
+
+    .centered {
+        text-align: center;
+    }
+
+    div[ui-view] {
+        width: 85%;
+        max-width: 1100px;
+        margin: 5em auto 0 auto;
+
+        > .row {
+            padding-top: 3em;
+            padding-bottom: 3em;
+        }
+
+        .container {
+            margin: 0;
+        }
+    }
+
+    // Colors
+    &.release-1 {
+        .color-fg {
+            color: #f2a73b;
+        }
+
+        .color2-fg {
+            color: #6D9DBD;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        div[ui-view] {
+            width: auto;
+            margin: 5em 1em 0 1em;
+        }
+    }
+}
+
+// injector
+// endinjector
