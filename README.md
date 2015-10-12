@@ -1,5 +1,7 @@
 # Le P'tit Libé
 
+Libération lance [Le P’tit Libé](http://www.liberation.fr/apps/ptit-libe), pour expliquer l’actualité aux enfants. A travers des dossiers pédagogiques et ludiques, la rédaction décrypte les grands sujets de société pour les petits citoyens.
+
 ## License
 
 > The MIT License (MIT)
