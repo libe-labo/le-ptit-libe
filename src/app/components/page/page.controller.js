@@ -16,6 +16,12 @@ class PageController {
         $scope.getCartelStyle = this.getCartelStyle.bind(this);
         $scope.shareOnFacebook = this.shareOnFacebook.bind(this);
         $scope.getDownloadHref = this.getDownloadHref.bind(this);
+
+        this.colors = [
+            [],
+            ['#f2a73b', '#e85a24'],
+            ['#81bb3f', '#2f6c34']
+        ];
     }
 
     getCurrentRelease () {
@@ -24,9 +30,10 @@ class PageController {
 
     getBodyStyle () {
         return {
-            'background-color' : '#e85a24',
+            'background-color' : this.colors[this.$stateParams.release][1],
             'background-image' : `url(assets/images/background-${this.$stateParams.release}.svg),` +
-                                 `linear-gradient(#f2a73b, #e85a24)`,
+                                 `linear-gradient(${this.colors[this.$stateParams.release][0]},` +
+                                                 `${this.colors[this.$stateParams.release][1]})`,
             'background-position' : `center bottom ${$('.footer').outerHeight() * 1.5}px`
         };
     }

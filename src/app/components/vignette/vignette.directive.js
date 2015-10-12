@@ -1,6 +1,6 @@
 'use strict';
 
-export function VignetteDirective() {
+export function VignetteDirective($rootScope) {
     'ngInject';
 
     let directive = {
@@ -17,7 +17,10 @@ export function VignetteDirective() {
     };
 
     function linkFunc(scope, el) {
-        let svg = $('<object>').attr('type', 'image/svg+xml')
+        let colors = [
+                '', '#6D9DBD', '#ce1b57'
+            ],
+            svg = $('<object>').attr('type', 'image/svg+xml')
                                .attr('data', scope.vignette.imageSrc);
         svg.appendTo($(el));
         svg.on('load', function() {
@@ -47,7 +50,7 @@ export function VignetteDirective() {
             svg.find('*').each(function() {
                 if ($(this).attr('id') != null && $(this).attr('id') !== 'clip') {
                     this.setAttribute('class', '');
-                    this.setAttribute('fill', '#6D9DBD');
+                    this.setAttribute('fill', colors[scope.$parent.getCurrentRelease()]);
                     this.setAttribute('clip-path', 'url(#clip)');
                 }
             });
