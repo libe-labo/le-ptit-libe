@@ -20,21 +20,21 @@ div.menu--wrapper(ng-controller="MenuController")
     //-         br
     //-         | du P'tit Libé&nbsp;?
     //-     p.centered
-    //-         a.mail(href="", target="_blank")
+    //-         a.button(href="", target="_blank")
     //-             img(src="assets/images/mail.svg")
     //-             br
     //-             | inscris-toi
     div.row
         p.centered
-            a.mail(ng-click="shareOnFacebook()")
+            a.button(ng-click="shareOnFacebook()")
                 img(src="assets/images/facebook.svg")
                 br
                 | partage-moi
-            a.mail(href="mailto:LePtitLibe@liberation.fr", target="_blank")
+            a.button(href="mailto:LePtitLibe@liberation.fr", target="_blank")
                 img(src="assets/images/ecris-moi.svg")
                 br
                 | écris-moi
-            a.mail(ng-href="{{ getDownloadHref() }}", target="_blank")
+            a.button(ng-href="{{ getDownloadHref() }}", target="_blank")
                 img(src="assets/images/imprimer.svg")
                 br
                 | imprime-moi
