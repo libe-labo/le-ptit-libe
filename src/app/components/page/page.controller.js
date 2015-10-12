@@ -16,6 +16,7 @@ class PageController {
         $scope.getBodyStyle = this.getBodyStyle.bind(this);
         $scope.getBodyClass = this.getBodyClass.bind(this);
         $scope.getCartelStyle = this.getCartelStyle.bind(this);
+        $scope.getDownloadHref = this.getDownloadHref.bind(this);
     }
 
     getCurrentRelease () {
@@ -40,25 +41,10 @@ class PageController {
             'background-color' : '#faebd9'
         };
     }
-}
 
-export function TitlesResolve($q, $http) {
-    let deferred = $q.defer();
-
-    $http({
-        method: 'GET',
-        url: 'assets/content/0/titles.json'
-    }).then(function(response) {
-        if (response.status === 200) {
-            response.data.title = addNbSp(response.data.title);
-            response.data.articles = _.map(response.data.articles, addNbSp);
-            deferred.resolve(response.data);
-        } else {
-            deferred.reject(response.status);
-        }
-    });
-
-    return deferred.promise;
+    getDownloadHref () {
+        return `assets/pdf/le-ptit-libe-${String(this.$stateParams.release)}.pdf`;
+    }
 }
 
 export default PageController;

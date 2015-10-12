@@ -8,7 +8,7 @@ div.footer
             img(src="assets/images/ecris-moi.svg")
             br
             | écris-moi
-        a.mail(href="", target="_blank")
+        a.mail(ng-href="{{ getDownloadHref() }}", target="_blank")
             img(src="assets/images/imprimer.svg")
             br
             | imprime-moi
