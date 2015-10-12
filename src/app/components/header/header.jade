@@ -4,7 +4,7 @@ div.header(ng-controller='HeaderController')
     a(ui-sref='menu({ release : getCurrentRelease() })')
         img(alt="Le P'tit Libé", src="assets/images/logo.svg")
     div.header__intro(ng-class='getIntroClass()')
-        p.header__intro__inner(ng-class='getIntroInnerClass()', ng-style="getIntroInnerStyle()")
+        p.header__intro__inner(ng-class='getIntroInnerClass()')
             em Libération
             |  lance le P’tit Libé, pour expliquer l’actualité aux enfants. A travers des dossiers pédagogiques et ludiques, la rédaction décrypte les grands sujets de société pour les petits citoyens.
             br

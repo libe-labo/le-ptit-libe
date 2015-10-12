@@ -22,9 +22,11 @@
 
         overflow-y: hidden;
 
-        transition: padding .5s linear, border-width .5s linear;
+        transition: padding .4s linear, border-width .4s linear;
 
         &__inner {
+            max-height: 750px;
+
             margin: 0;
             padding: 0;
 
@@ -32,7 +34,7 @@
 
             opacity: 1;
 
-            transition: height .5s linear, opacity .5s linear;
+            transition: max-height .7s linear;
         }
 
         &--folded {
@@ -41,7 +43,7 @@
             border-width: 2pt;
 
             &__inner {
-                height: 0;
+                max-height: 0;
             }
         }
     }

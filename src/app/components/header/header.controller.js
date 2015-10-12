@@ -4,31 +4,25 @@ class HeaderController {
     constructor ($scope) {
         'ngInject';
 
-        this.baseIntroInnerHeight = 'auto';
-        window.setTimeout(function() {
-            $scope.$apply(function() {
-                this.baseIntroInnerHeight = $('.header__intro__inner').outerHeight();
-            }.bind(this));
-        }.bind(this), 500);
-
         this.folded = false;
 
         $scope.getIntroClass = this.getIntroClass.bind(this);
         $scope.getIntroInnerClass = this.getIntroInnerClass.bind(this);
-        $scope.getIntroInnerStyle = this.getIntroInnerStyle.bind(this);
 
-        $(window).on('scroll', () => {
+        $(window).on('scroll', _.debounce(() => {
             $scope.$apply(() => {
                 var passed = $(window).scrollTop() + ($(window).innerHeight() * 0.90) >
                              $('.header__intro').offset().top + $('.header__intro').outerHeight();
                 if (!this.folded && passed) {
+                    $('.header__intro__inner')
+                        .css('max-height', $('.header__intro__inner').outerHeight());
                     this.folded = true;
-                    $(window).scrollTop(5);
+                    $('.header__intro__inner').css('max-height', '');
                 } else if (this.folded && $(window).scrollTop() <= 0) {
                     this.folded = false;
                 }
             });
-        });
+        }, 100));
     }
 
     getIntroClass () {
@@ -40,12 +34,6 @@ class HeaderController {
     getIntroInnerClass () {
         return {
             'header__intro--folded__inner' : this.folded
-        };
-    }
-
-    getIntroInnerStyle () {
-        return {
-            height : this.folded ? 0 : this.baseIntroInnerHeight
         };
     }
 }
