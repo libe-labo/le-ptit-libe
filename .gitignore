@@ -1,0 +1,13 @@
+.sass-cache/
+.idea/
+.tmp/
+.pip/
+node_modules/
+bower_components/
+dist/
+
+src/app/releases/
+src/assets/content/
+src/assets/images/1/
+src/assets/images/menu/
+src/assets/images/background-*
