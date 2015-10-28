@@ -1,4 +1,17 @@
 div.footer
+    p.centered
+        a.button(ng-click="shareOnFacebook()")
+            img(src="assets/images/facebook.svg")
+            br
+            | partage-moi
+        a.button(href="mailto:LePtitLibe@liberation.fr", target="_blank")
+            img(src="assets/images/ecris-moi.svg")
+            br
+            | écris-moi
+        a.button(ng-href="{{ getDownloadHref() }}", target="_blank")
+            img(src="assets/images/imprimer.svg")
+            br
+            | imprime-moi
     p
         br
         | Le P’tit Libé, c’est une équipe avec des journalistes, une graphiste et un développeur.

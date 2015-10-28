@@ -16,25 +16,3 @@ div.menu--wrapper(ng-controller="MenuController")
                 a.color2-fg(ng-bind-html="getTitle(idx)", ui-sref="article({ release : getReleaseN() , article : idx })", ui-sref-opts="{reload:true}")
     div.row
         p.centered(style="margin-top:10em;")
-    //-         | Tu veux des nouvelles
-    //-         br
-    //-         | du P'tit Libé&nbsp;?
-    //-     p.centered
-    //-         a.button(href="", target="_blank")
-    //-             img(src="assets/images/mail.svg")
-    //-             br
-    //-             | inscris-toi
-    div.row
-        p.centered
-            a.button(ng-click="shareOnFacebook()")
-                img(src="assets/images/facebook.svg")
-                br
-                | partage-moi
-            a.button(href="mailto:LePtitLibe@liberation.fr", target="_blank")
-                img(src="assets/images/ecris-moi.svg")
-                br
-                | écris-moi
-            a.button(ng-href="{{ getDownloadHref() }}", target="_blank")
-                img(src="assets/images/imprimer.svg")
-                br
-                | imprime-moi

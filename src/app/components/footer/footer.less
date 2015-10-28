@@ -3,17 +3,19 @@
     max-width: 640px;
     margin: 2em auto;
 
-    &__buttons {
-        a {
-            display: inline-block;
+    a.button {
+        display: inline-block;
 
-            margin-right: 2em;
+        margin-right: 2em;
 
-            cursor: pointer;
+        cursor: pointer;
 
-            &:last-of-type {
-                margin-right: 0;
-            }
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        &:hover {
+            color: inherit;
         }
     }
 
