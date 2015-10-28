@@ -24,6 +24,7 @@ let resolve = function($q, $http, $stateParams) {
 
 function routerConfig ($stateProvider, $urlRouterProvider) {
     'ngInject';
+
     $stateProvider
         .state('menu', {
             url: '/:release/',
@@ -31,6 +32,12 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
             controller: 'MainController',
             controllerAs: 'main',
             resolve: { titles : resolve }
+        })
+        .state('resources', {
+            url: '/:release/resources/',
+            templateUrl: 'app/resources/resources.html',
+            controller: 'ResourcesController',
+            controllerAs: 'resources'
         })
         .state('article', {
             url: '/:release/:article/',

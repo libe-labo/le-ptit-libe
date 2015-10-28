@@ -1,0 +1,11 @@
+.row.article.resources(ng-style="getCartelStyle()")
+    p.article__title.resources__title.color-fg
+        span Ressources
+    div.article__content.resources__content(ng-repeat='resource in resources')
+        p
+            img(ng-src='{{resource.img}}')
+            span.color-fg {{resource.title}}
+        p {{resource.description}}
+        p
+            br
+    p.resources__bottom {{ attribution }}
