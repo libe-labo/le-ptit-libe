@@ -1,0 +1,6 @@
+div.picture-switch
+    img.picture-switch__picture.picture-switch__picture--first(ng-src='{{first}}')
+    img.picture-switch__picture.picture-switch__picture--second(ng-src='{{second}}', ng-style='getSecondPictureStyle()')
+    div.picture-switch__selector--wrapper
+        input.picture-switch__selector.picture-switch__selector--first(type='radio', name='{{ name }}', value='0', ng-model='selector')
+        input.picture-switch__selector.picture-switch__selector--second(type='radio', name='{{ name }}', value='1', ng-model='selector')

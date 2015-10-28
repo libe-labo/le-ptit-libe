@@ -12,6 +12,7 @@ import MainController from './main/main.controller';
 import ArticleController from './article/article.controller';
 
 import { VignetteDirective } from './components/vignette/vignette.directive';
+import { PictureSwitchDirective } from './components/pictureSwitch/pictureSwitch.directive';
 
 angular.module('ptitlibe', ['angulartics', 'angulartics.google.analytics',
                             'ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
@@ -28,4 +29,5 @@ angular.module('ptitlibe', ['angulartics', 'angulartics.google.analytics',
        .controller('MainController', MainController)
        .controller('ArticleController', ArticleController)
 
+       .directive('pictureswitch', PictureSwitchDirective)
        .directive('vignette', VignetteDirective);

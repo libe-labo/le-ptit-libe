@@ -1,0 +1,31 @@
+.picture-switch {
+    position: relative;
+
+    &__picture {
+        &--second {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            .vendor(transition, opacity .4s linear);
+        }
+    }
+
+    &__selector {
+        position: absolute;
+
+        .vendor(transform, translate(-50%, 0));
+
+        &--wrapper {
+            position: relative;
+        }
+
+        &--first {
+            left: 25%;
+        }
+
+        &--second {
+            left: 75%;
+        }
+    }
+}
