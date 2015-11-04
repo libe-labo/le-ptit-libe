@@ -15,4 +15,10 @@ div.menu--wrapper(ng-controller="MenuController")
                 vignette(image-src="getVignetteImage(idx)", article-id="idx")
                 a.color2-fg(ng-bind-html="getTitle(idx)", ui-sref="article({ release : getReleaseN() , article : idx })", ui-sref-opts="{reload:true}")
     div.row
+        p.centered
+            a.button.large.color2-fg(ui-sref="resources({ release : getReleaseN() })")
+                img(src='assets/images/resources.svg')
+                br
+                | Resources
+    div.row
         p.centered(style="margin-top:10em;")
