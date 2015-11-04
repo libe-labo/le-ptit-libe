@@ -17,6 +17,10 @@ body {
         text-align: center;
     }
 
+    .mobile {
+        display: none;
+    }
+
     div[ui-view] {
         width: 85%;
         max-width: 1100px;
@@ -59,6 +63,14 @@ body {
         div[ui-view] {
             width: auto;
             margin: 5em 1em 0 1em;
+        }
+
+        .mobile {
+            display: block;
+        }
+
+        .desktop {
+            display: none;
         }
     }
 }
