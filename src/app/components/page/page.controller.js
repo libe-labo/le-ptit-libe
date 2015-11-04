@@ -12,6 +12,7 @@ class PageController {
         $scope.getCartelStyle = this.getCartelStyle.bind(this);
         $scope.shareOnFacebook = this.shareOnFacebook.bind(this);
         $scope.getDownloadHref = this.getDownloadHref.bind(this);
+        $scope.getOtherN = this.getOtherN.bind(this);
 
         this.colors = [
             [],
@@ -61,6 +62,10 @@ class PageController {
                                      `/#/${this.$stateParams.release}/`),
             link = 'http://www.facebook.com/sharer/sharer.php?u=' + url;
         window.open(link, '', 'width=575,height=400,menubar=no,toolbar=no');
+    }
+
+    getOtherN () {
+        return this.$stateParams.release === '1' ? 2 : 1;
     }
 }
 

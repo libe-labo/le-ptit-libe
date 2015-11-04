@@ -12,6 +12,10 @@ div.footer
             img(src="assets/images/imprimer.svg")
             br
             | imprime-moi
+        a.button(ui-sref="menu({ release : getOtherN() })", target="_blank")
+            img(src="assets/images/logo-small.svg", style="height:50px")
+            br
+            | Lire le numéro {{ getOtherN() }}
     p
         br
     p.footer__credits
