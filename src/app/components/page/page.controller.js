@@ -15,8 +15,8 @@ class PageController {
 
         this.colors = [
             [],
-            ['#f2a73b', '#e85a24'],
-            ['#81bb3f', '#2f6c34']
+            ['#f2a73b', '#e85a24', '#faebd9'],
+            ['#abba3e', '#045b2e', '#eceed2']
         ];
 
         $scope.$root.$on('$stateChangeStart', function(ev, toState, toParams) {
@@ -48,7 +48,7 @@ class PageController {
 
     getCartelStyle () {
         return {
-            'background-color' : '#faebd9'
+            'background-color' : this.colors[this.$stateParams.release][2]
         };
     }
 
