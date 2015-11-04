@@ -53,6 +53,10 @@
         }
 
         &__right {
+            span {
+                padding: 0;
+            }
+
             img {
                 float: none;
 
@@ -60,7 +64,7 @@
                 height: auto;
 
                 left: 0;
-                top: 60px;
+                top: 1em;
             }
         }
     }
@@ -73,12 +77,16 @@
 
         cursor: pointer;
 
+        img {
+            width: 25px;
+        }
+
         &--prev {
-            left: -1em;
+            left: -2em;
         }
 
         &--next {
-            right: -1em;
+            right: -2em;
         }
     }
 }
