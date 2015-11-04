@@ -8,7 +8,9 @@ export function PictureSwitchDirective() {
         templateUrl: 'app/components/pictureSwitch/pictureSwitch.html',
         scope: {
             first: '=',
-            second: '='
+            second: '=',
+            firstLabel: '=',
+            secondLabel: '='
         },
         link: linkFunc,
         controller: PictureSwitch,
@@ -30,15 +32,28 @@ class PictureSwitch {
 
         $scope.first = this.first;
         $scope.second = this.second;
+        $scope.firstLabel = this.firstLabel;
+        $scope.secondLabel = this.secondLabel;
         $scope.name = `rb${String(parseInt(Math.random() * 100 / 100))}`;
         $scope.selector = 0;
 
         $scope.getSecondPictureStyle = this.getSecondPictureStyle.bind(this);
+        $scope.getSwitchSrc = this.getSwitchSrc.bind(this);
+        $scope.select = this.select.bind(this);
     }
 
     getSecondPictureStyle () {
         return {
             opacity : this.$scope.selector
         };
+    }
+
+    getSwitchSrc (idx) {
+        return 'assets/images/pictureswitch' + (idx === this.$scope.selector ? '-actif' : '') +
+               '.svg';
+    }
+
+    select (idx) {
+        this.$scope.selector = idx;
     }
 }

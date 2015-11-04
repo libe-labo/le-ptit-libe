@@ -1,6 +1,8 @@
 .picture-switch {
     position: relative;
 
+    margin-bottom: 4em;
+
     &__picture {
         &--second {
             position: absolute;
@@ -13,6 +15,18 @@
 
     &__selector {
         position: absolute;
+
+        text-align: center;
+
+        cursor: pointer;
+
+        img {
+            width: 20px !important;
+        }
+
+        span {
+            font-size: .8em;
+        }
 
         .vendor(transform, translate(-50%, 0));
 
