@@ -5,6 +5,7 @@ class PageController {
         'ngInject';
 
         this.$stateParams = $stateParams;
+        this.$state = $state;
 
         $scope.getCurrentRelease = this.getCurrentRelease.bind(this);
         $scope.getBodyStyle = this.getBodyStyle.bind(this);
@@ -34,11 +35,17 @@ class PageController {
 
     getBodyStyle () {
         if (this.$stateParams.release == null) { return { }; }
+
+        var bgImg = `linear-gradient(${this.colors[this.$stateParams.release][0]},` +
+                    `${this.colors[this.$stateParams.release][1]})`;
+
+        if (!this.$state.is('newsletter')) {
+            bgImg = `url(assets/images/background-${this.$stateParams.release}.svg),` + bgImg;
+        }
+
         return {
             'background-color' : this.colors[this.$stateParams.release][1],
-            'background-image' : `url(assets/images/background-${this.$stateParams.release}.svg),` +
-                                 `linear-gradient(${this.colors[this.$stateParams.release][0]},` +
-                                                 `${this.colors[this.$stateParams.release][1]})`,
+            'background-image' : bgImg,
             'background-position' : `center bottom ${$('.footer').outerHeight() * 1.5}px`
         };
     }

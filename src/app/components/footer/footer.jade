@@ -1,5 +1,9 @@
 div.footer
     p.centered
+        a.button(ui-sref="newsletter({ release : getCurrentRelease() })")
+            img(src="assets/images/mail.svg")
+            br
+            | newsletter
         a.button(ng-click="shareOnFacebook()")
             img(src="assets/images/facebook.svg")
             br
@@ -12,6 +16,9 @@ div.footer
             img(src="assets/images/imprimer.svg")
             br
             | imprime-moi
+    p
+        br
+    p.centered
         a.button(ui-sref="menu({ release : getOtherN() })", target="_blank")
             img(src="assets/images/logo-small.svg", style="height:50px")
             br
