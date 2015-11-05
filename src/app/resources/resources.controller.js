@@ -1,8 +1,10 @@
 'use strict';
 
 class ResourcesController {
-    constructor ($scope, $http) {
+    constructor ($scope, $http, titles) {
         'ngInject';
+
+        this.titles = titles;
 
         $http.get(`assets/content/resources-${$scope.getCurrentRelease()}.json`).then(response => {
             if (response.status === 200) {
@@ -10,6 +12,15 @@ class ResourcesController {
                 $scope.resources = response.data.resources;
             }
         });
+
+        $scope.getTitle = this.getTitle.bind(this);
+    }
+
+    getTitle (article) {
+        if (article != null) {
+            return this.titles.articles[article];
+        }
+        return this.titles.title.replace(' ', '<br>');
     }
 }
 

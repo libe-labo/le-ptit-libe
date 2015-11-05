@@ -37,7 +37,8 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
             url: '/:release/resources/',
             templateUrl: 'app/resources/resources.html',
             controller: 'ResourcesController',
-            controllerAs: 'resources'
+            controllerAs: 'resources',
+            resolve: { titles : resolve }
         })
         .state('article', {
             url: '/:release/:article/',
