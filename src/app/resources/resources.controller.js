@@ -14,6 +14,11 @@ class ResourcesController {
         });
 
         $scope.getTitle = this.getTitle.bind(this);
+        $scope.$parent.getChapo = this.getChapo.bind(this);
+    }
+
+    getChapo () {
+        return this.titles.chapo;
     }
 
     getTitle (article) {
