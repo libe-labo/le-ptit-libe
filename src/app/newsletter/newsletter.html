@@ -1,0 +1,62 @@
+<div class="row article" ng-style="getCartelStyle()">
+    <p>
+        Le P'tit Libé, c'est tous les mois un sujet interactif pour expliquer l'actualité aux enfants. Vous souhaitez être prévenus de sa parution et suivre ses actualités ? Inscrivez-vous à notre newsletter ci-dessous.
+    </p>
+    <div style="text-align:center;">
+        <form name="emvForm" id="emvForm" action="http://tre.emv3.com/D2UTF8" method="POST" target="_top">
+
+            <input placeholder="Adresse email" type="text" id="EMAIL_FIELD" name="EMAIL_FIELD" value="" size="30" maxlength="64">
+
+
+            <input type="submit" value="Envoyer">
+        </form>
+        <script language="javascript">
+            function isEmail(emailAddress) {
+                emailAddressValue = emailAddress.value;
+                var emailAddressRegex = /^[^@\s]+@[^.@\s]+(.[^@\s^.]+)+$/;
+                if (emailAddress.value == '' || emailAddress == null) {
+                    return true;
+                }
+                if (!emailAddressRegex.test(emailAddressValue)) {
+                    alert('L\'adresse Email semble incorrecte,\nveuillez vérifier la syntaxe.');
+                    emailAddress.focus();
+                    return false;
+                }
+                return true;
+            }
+            String.prototype.trim = function() { return this.replace(/^\s(\b.\b|)\s*$/, "$1"); }
+            function mandatoryText(input,fieldName){
+                if(input.value.trim()==''||input==null){
+                    alert('Veuillez saisir '+fieldName+'.');
+                    input.focus();
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+            function validForm(ev) {
+                ev.preventDefault();
+
+                if(!mandatoryText(document.getElementById('EMAIL_FIELD'), 'Email')) return;
+                if(!isEmail(document.getElementById('EMAIL_FIELD'))) return;
+
+                var data = { };
+                $('#emvForm').find('input').each(function() {
+                    var $this = $(this);
+                    if ($this.attr('name') != null && $this.attr('name').length > 0) {
+                        data[$this.attr('name')] = $this.val();
+                    }
+                });
+
+                $.ajax($('#emvForm').attr('action'), {
+                    method : $('#emvForm').attr('method'),
+                    data : data,
+                    complete : function() {
+                        $('.article').children('div').empty().append($('<p>').html('C\'est parti&nbsp;!'))
+                    }
+                });
+            }
+            $('#emvForm').on('submit', validForm);
+        </script>
+    </div>
+</div>
