@@ -4,6 +4,14 @@ class MenuController {
     constructor ($scope, $stateParams, $rootScope, $anchorScroll) {
         'ngInject';
 
+        let vLoaded = 0;
+        $scope.$on('vLoaded', () => {
+            ++vLoaded;
+            if (vLoaded >= 7) {
+                $(window).trigger('resize');
+            }
+        });
+
         this.$stateParams = $stateParams;
 
         $scope.getReleaseN = this.getReleaseN.bind(this);
@@ -18,12 +26,19 @@ class MenuController {
 
         $(window).off('resize.menu__item');
         $(window).on('resize.menu__item', _.debounce(() => {
-            var height = 0;
+            var height = 0,
+                vHeight = $('.menu__item img').outerHeight();
             $('.menu__item').each(function() {
                 $(this).css('height', 'auto');
                 height = _.max([height, $(this).innerHeight()]);
             });
             $('.menu__item').css('height', height);
+
+            if (vHeight <= 0) {
+                window.setTimeout(() => {
+                    $(window).trigger('resize');
+                }, 500);
+            }
         }, 200));
         $(window).trigger('resize');
     }

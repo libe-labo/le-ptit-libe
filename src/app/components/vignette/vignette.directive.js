@@ -18,7 +18,7 @@ export function VignetteDirective() {
 
     function linkFunc(scope, el) {
         let colors = [
-                '', '#6D9DBD', '#e46d65'
+                '', '#6D9DBD', '#e46d65', '#e3ba6b'
             ],
             svg = $('<object>').attr('type', 'image/svg+xml')
                                .attr('data', scope.vignette.imageSrc);
@@ -69,6 +69,8 @@ export function VignetteDirective() {
                     };
                 window.setTimeout(updateR, timeout);
             })();
+
+            scope.$emit('vLoaded');
         });
     }
 

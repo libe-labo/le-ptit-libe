@@ -10,6 +10,7 @@ src/app/releases/*/*.html
 src/assets/content/*.json
 src/assets/images/1/
 src/assets/images/2/
+src/assets/images/3/
 src/assets/images/menu/*.svg
 src/assets/images/background-*
 src/assets/pdf/*.pdf

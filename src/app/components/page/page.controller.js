@@ -18,11 +18,12 @@ class PageController {
         this.colors = [
             [],
             ['#f2a73b', '#e85a24', '#faebd9'],
-            ['#abba3e', '#045b2e', '#eceed2']
+            ['#abba3e', '#045b2e', '#eceed2'],
+            ['#a5cde3', '#76a9c6', '#fff']
         ];
 
         $scope.$root.$on('$stateChangeStart', function(ev, toState, toParams) {
-            if (toState.name === 'menu' && [1].indexOf(parseInt(toParams.release)) < 0) {
+            if (toState.name === 'menu' && [1, 2, 3].indexOf(parseInt(toParams.release)) < 0) {
                 ev.preventDefault();
                 $state.go('menu', { release : '1' }, { reload : true });
             }
