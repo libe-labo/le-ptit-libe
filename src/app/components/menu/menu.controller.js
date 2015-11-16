@@ -48,7 +48,11 @@ class MenuController {
     }
 
     getVignetteRepetition () {
-        return _.range(1, 7);
+        if (this.getReleaseN() === '3') {
+            return _.range(1, 4);
+        } else {
+            return _.range(1, 7);
+        }
     }
 
     getVignetteClass (idx) {

@@ -13,13 +13,13 @@ div.footer
             img(src="assets/images/ecris-moi.svg")
             br
             | écris-moi
-        a.button(ng-href="{{ getDownloadHref() }}", target="_blank")
+        a.button(ng-href="{{ getDownloadHref() }}", target="_blank", ng-if="getCurrentRelease()!='3'")
             img(src="assets/images/imprimer.svg")
             br
             | imprime-moi
     p
         br
-    p.centered
+    p.centered(ng-if="getCurrentRelease()!='3'")
         a.button(ui-sref="menu({ release : getOtherN() })", target="_blank")
             img(src="assets/images/logo-small.svg", style="height:50px")
             br
