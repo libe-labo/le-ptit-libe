@@ -2,12 +2,12 @@
 
 import { addNbSp } from './components/utils/utils';
 
-let resolve = function($q, $http, $stateParams) {
+let resolve = function($q, $http) {
     let deferred = $q.defer();
 
     $http({
         method: 'GET',
-        url: `assets/content/titles-${$stateParams.release}.json`
+        url: `assets/content/titles.json`
     }).then(function(response) {
         if (response.status === 200) {
             if (typeof(response.data) === typeof('')) { response.data = JSON.parse(response.data); }
@@ -28,28 +28,28 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
         .state('menu', {
-            url: '/:release/',
+            url: '/',
             templateUrl: 'app/main/main.html',
             controller: 'MainController',
             controllerAs: 'main',
             resolve: { titles : resolve }
         })
         .state('resources', {
-            url: '/:release/resources/',
+            url: '/resources/',
             templateUrl: 'app/resources/resources.html',
             controller: 'ResourcesController',
             controllerAs: 'resources',
             resolve: { titles : resolve }
         })
         .state('newsletter', {
-            url: '/:release/newsletter/',
+            url: '/newsletter/',
             templateUrl: 'app/newsletter/newsletter.html',
             controller: 'NewsletterController',
             controllerAs: 'newsletter',
             resolve: { titles : resolve }
         })
         .state('article', {
-            url: '/:release/:article/',
+            url: '/:article/',
             templateUrl: 'app/article/article.html',
             controller: 'ArticleController',
             controllerAs: 'article',

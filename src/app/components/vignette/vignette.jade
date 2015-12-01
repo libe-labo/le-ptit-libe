@@ -1,2 +1,2 @@
 <img ng-src="{{ vignette.imageSrc }}">
-<div ng-if="vignette.articleId!=null" ui-sref="article({ release : vignette.getCurrentRelease() , article : vignette.articleId })", ui-sref-opts="{reload:true}"></div>
+<div ng-if="vignette.articleId!=null" ui-sref="article({ article : vignette.articleId })", ui-sref-opts="{reload:true}"></div>

@@ -24,8 +24,7 @@ class NewsletterController {
     }
 
     getVignetteImage () {
-        return `assets/images/menu/menu-${this.$stateParams.release}-` +
-               `${this.$stateParams.article}.svg`;
+        return `assets/images/menu/menu-${this.$stateParams.article}.svg`;
     }
 }
 

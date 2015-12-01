@@ -27,9 +27,6 @@ class ArticleController {
         if (article != null) {
             return this.titles.articles[article];
         }
-        if (this.$scope.getCurrentRelease() === '3') {
-            return this.titles.title;
-        }
         return this.titles.title.replace(' ', '<br>');
     }
 
@@ -38,8 +35,7 @@ class ArticleController {
     }
 
     getVignetteImage () {
-        return `assets/images/menu/menu-${this.$stateParams.release}-` +
-               `${this.$stateParams.article}.svg`;
+        return `assets/images/menu/menu-${this.$stateParams.article}.svg`;
     }
 }
 

@@ -4,6 +4,6 @@
             vignette(image-src="getVignetteImage()")
             span(ng-bind-html="getArticleTitle()")
         p
-        div.article__content(data-editable, data-name="content", ng-include="'app/releases/' + getCurrentRelease() + '/' + getCurrentArticle() + '.html'")
+        div.article__content(data-editable, data-name="content", ng-include="'app/articles/' + getCurrentArticle() + '.html'")
 .row(ng-style="getCartelStyle()")
     div(ng-include="'app/components/menu/menu.html'")

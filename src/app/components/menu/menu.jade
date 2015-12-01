@@ -1,22 +1,22 @@
 div.menu--wrapper(ng-controller="MenuController")
     div.row.release-title.color-fg
         div
-            p N°{{ getReleaseN() }}
+            p N°
         div
             p.release-title__title(ng-bind-html="getTitle()")
     div.row.centered.menu
         div.row
             div.menu__item.col-xs-4.col-xs-offset-4.col-md-2.col-md-offset-5.centered
                 vignette(image-src="getVignetteImage(0)", article-id="0")
-                a.color2-fg(ng-bind-html="getTitle(0)", ui-sref="article({ release : getReleaseN() , article : 0 })", ui-sref-opts="{reload:true}")
+                a.color2-fg(ng-bind-html="getTitle(0)", ui-sref="article({ article : 0 })", ui-sref-opts="{ reload : true }")
         div.row
             div.menu__item.col-xs-4.col-md-2(ng-repeat='idx in getVignetteRepetition(row)',
                                     ng-class='getVignetteClass(idx)')
                 vignette(image-src="getVignetteImage(idx)", article-id="idx")
-                a.color2-fg(ng-bind-html="getTitle(idx)", ui-sref="article({ release : getReleaseN() , article : idx })", ui-sref-opts="{reload:true}")
-    div.row(ng-if="getReleaseN()=='2'")
+                a.color2-fg(ng-bind-html="getTitle(idx)", ui-sref="article({ article : idx })", ui-sref-opts="{ reload : true }")
+    div.row
         p.centered
-            a.button.large.color2-fg(ui-sref="resources({ release : getReleaseN() })", style="margin-top:1em;")
+            a.button.large.color2-fg(ui-sref="resources()", style="margin-top:1em;")
                 img(src='assets/images/resources.svg')
                 br
                 | Ressources

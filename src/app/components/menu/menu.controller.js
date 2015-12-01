@@ -14,7 +14,6 @@ class MenuController {
 
         this.$stateParams = $stateParams;
 
-        $scope.getReleaseN = this.getReleaseN.bind(this);
         $scope.getVignetteRepetition = this.getVignetteRepetition.bind(this);
         $scope.getVignetteClass = this.getVignetteClass.bind(this);
         $scope.getVignetteArticleId = this.getVignetteArticleId.bind(this);
@@ -43,16 +42,8 @@ class MenuController {
         $(window).trigger('resize');
     }
 
-    getReleaseN () {
-        return this.$stateParams.release;
-    }
-
     getVignetteRepetition () {
-        if (this.getReleaseN() === '3') {
-            return _.range(1, 4);
-        } else {
-            return _.range(1, 7);
-        }
+        return _.range(1, 7);
     }
 
     getVignetteClass (idx) {
@@ -71,7 +62,7 @@ class MenuController {
     }
 
     getVignetteImage (idx) {
-        return `assets/images/menu/menu-${this.$stateParams.release}-${idx}.svg`;
+        return `assets/images/menu/menu-${idx}.svg`;
     }
 }
 

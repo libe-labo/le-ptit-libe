@@ -20,9 +20,6 @@ class MainController {
             return this.titles.articles[article];
         }
 
-        if (this.$scope.getCurrentRelease() === '3') {
-            return this.titles.title;
-        }
         return this.titles.title.replace(' ', '<br>');
     }
 }

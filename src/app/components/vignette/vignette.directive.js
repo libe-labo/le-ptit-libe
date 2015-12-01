@@ -17,9 +17,7 @@ export function VignetteDirective() {
     };
 
     function linkFunc(scope, el) {
-        let colors = [
-                '', '#6D9DBD', '#e46d65', '#e3ba6b'
-            ],
+        let color = '#6D9DBD',
             svg = $('<object>').attr('type', 'image/svg+xml')
                                .attr('data', scope.vignette.imageSrc);
         svg.appendTo($(el));
@@ -50,7 +48,7 @@ export function VignetteDirective() {
             svg.find('*').each(function() {
                 if ($(this).attr('id') != null && $(this).attr('id') !== 'clip') {
                     this.setAttribute('class', '');
-                    this.setAttribute('fill', colors[scope.$parent.getCurrentRelease()]);
+                    this.setAttribute('fill', color);
                     this.setAttribute('clip-path', 'url(#clip)');
                 }
             });
@@ -82,9 +80,5 @@ class VignetteController {
         'ngInject';
 
         this.$stateParams = $stateParams;
-    }
-
-    getCurrentRelease () {
-        return this.$stateParams.release;
     }
 }
