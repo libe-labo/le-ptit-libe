@@ -56,7 +56,7 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
             resolve: { titles : resolve }
         });
 
-    $urlRouterProvider.otherwise('/3/');
+    $urlRouterProvider.otherwise('/');
 }
 
 export default routerConfig;
