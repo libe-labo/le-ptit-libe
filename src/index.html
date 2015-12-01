@@ -29,7 +29,21 @@
     <!-- endinject -->
     <!-- endbuild -->
   </head>
-  <body ng-style="getBodyStyle()">
+  <body ng-style="getBodyStyle()" ng-class="getBodyClass()">
+
+    <header id="main-header">
+        <nav id="main-nav" role="navigation">
+            <div class="wrapper">
+                <div class="navbar-header">
+                    <span class="navbar-brand">
+                        <a href="http://www.liberation.fr">
+                            <img src="http://s1.libe.com/newsite/images/logo-libe.svg" alt="Libération">
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <div ng-include="'app/components/header/header.html'" style="margin-top:50px;"></div>
     <div ui-view class="container" id="content"></div>
@@ -47,9 +61,6 @@
     <!-- inject:partials -->
     <!-- endinject -->
     <!-- endbuild -->
-
-    <!-- Header -->
-    <script type="text/javascript" src="http://www.liberation.fr/menu/script.js"></script>
 
     <!-- Chartbeat -->
     <script type='text/javascript'>
