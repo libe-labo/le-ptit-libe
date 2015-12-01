@@ -37,9 +37,16 @@ class PictureSwitch {
         $scope.name = `rb${String(parseInt(Math.random() * 100 / 100))}`;
         $scope.selector = 0;
 
+        $scope.getFirstPictureStyle = this.getFirstPictureStyle.bind(this);
         $scope.getSecondPictureStyle = this.getSecondPictureStyle.bind(this);
         $scope.getSwitchSrc = this.getSwitchSrc.bind(this);
         $scope.select = this.select.bind(this);
+    }
+
+    getFirstPictureStyle () {
+        return {
+            opacity : this.$scope.selector ? 0 : 1
+        };
     }
 
     getSecondPictureStyle () {

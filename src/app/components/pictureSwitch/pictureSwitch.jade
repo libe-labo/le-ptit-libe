@@ -1,5 +1,5 @@
 div.picture-switch
-    img.picture-switch__picture.picture-switch__picture--first(ng-src='{{first}}')
+    img.picture-switch__picture.picture-switch__picture--first(ng-src='{{first}}', ng-style='getFirstPictureStyle()')
     img.picture-switch__picture.picture-switch__picture--second(ng-src='{{second}}', ng-style='getSecondPictureStyle()')
     div.picture-switch__selector--wrapper
         span.picture-switch__selector.picture-switch__selector--first(ng-click="select(0)")
