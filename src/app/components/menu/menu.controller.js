@@ -33,7 +33,7 @@ class MenuController {
             });
             $('.menu__item').css('height', height);
 
-            if (vHeight <= 0) {
+            if (vHeight <= 50) {
                 window.setTimeout(() => {
                     $(window).trigger('resize');
                 }, 500);
