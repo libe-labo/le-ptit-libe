@@ -23,15 +23,15 @@ class MenuController {
             $anchorScroll('content');
         });
 
-        $(window).off('resize.menu__item');
-        $(window).on('resize.menu__item', _.debounce(() => {
+        $(window).off('resize.menuu__item');
+        $(window).on('resize.menuu__item', _.debounce(() => {
             var height = 0,
-                vHeight = $('.menu__item img').outerHeight();
-            $('.menu__item').each(function() {
+                vHeight = $('.menuu__item img').outerHeight();
+            $('.menuu__item').each(function() {
                 $(this).css('height', 'auto');
                 height = _.max([height, $(this).innerHeight()]);
             });
-            $('.menu__item').css('height', height);
+            $('.menuu__item').css('height', height);
 
             if (vHeight <= 50) {
                 window.setTimeout(() => {

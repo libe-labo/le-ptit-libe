@@ -1,17 +1,17 @@
-div.menu--wrapper(ng-controller="MenuController")
-    div.row.release-title.color-fg
+div.menuu--wrapper(ng-controller="MenuController")
+    div.row.release-title.color2-fg
         div
             p N°
         div
             p.release-title__title(ng-bind-html="getTitle()")
-        span.release-title__date.color2-fg 
-    div.row.centered.menu
+        span.release-title__date.color-fg 7.01.16
+    div.row.centered.menuu
         div.row
-            div.menu__item.col-xs-4.col-xs-offset-4.col-md-2.col-md-offset-5.centered
+            div.menuu__item.col-xs-4.col-xs-offset-4.col-md-2.col-md-offset-5.centered
                 vignette(image-src="getVignetteImage(0)", article-id="0")
                 a.color2-fg(ng-bind-html="getTitle(0)", ui-sref="article({ article : 0 })", ui-sref-opts="{ reload : true }")
         div.row
-            div.menu__item.col-xs-4.col-md-2(ng-repeat='idx in getVignetteRepetition(row)',
+            div.menuu__item.col-xs-4.col-md-2(ng-repeat='idx in getVignetteRepetition(row)',
                                     ng-class='getVignetteClass(idx)')
                 vignette(image-src="getVignetteImage(idx)", article-id="idx")
                 a.color2-fg(ng-bind-html="getTitle(idx)", ui-sref="article({ article : idx })", ui-sref-opts="{ reload : true }")
