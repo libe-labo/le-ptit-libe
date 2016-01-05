@@ -29,7 +29,7 @@
         }
     }
 
-    p, #quiz, table {
+    p, ul, #quiz, table {
         max-width: 640px;
         margin: 0 auto 2em auto;
         padding: 0 2em;
@@ -49,6 +49,22 @@
         &.nobottommargin {
             margin-bottom: .5em;
             padding-bottom: .5em;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+
+        li {
+            margin: 1em 0;
+            padding-left: 2.5em;
+            background-image: url(/assets/images/puce-punaise-bleue.svg);
+            background-repeat: no-repeat;
+            background-size: 2em auto;
+
+            &:nth-of-type(odd) {
+                background-image: url(/assets/images/puce-punaise-rose.svg);
+            }
         }
     }
 
