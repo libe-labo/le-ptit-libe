@@ -40,6 +40,7 @@ class PictureSwitch {
         $scope.getFirstPictureStyle = this.getFirstPictureStyle.bind(this);
         $scope.getSecondPictureStyle = this.getSecondPictureStyle.bind(this);
         $scope.getSwitchSrc = this.getSwitchSrc.bind(this);
+        $scope.getSwitchClass = this.getSwitchClass.bind(this);
         $scope.select = this.select.bind(this);
     }
 
@@ -55,9 +56,14 @@ class PictureSwitch {
         };
     }
 
-    getSwitchSrc (idx) {
-        return 'assets/images/pictureswitch' + (idx === this.$scope.selector ? '-actif' : '') +
-               '.svg';
+    getSwitchSrc () {
+        return 'assets/images/fleche-gauche.svg';
+    }
+
+    getSwitchClass (idx) {
+        return {
+            active: idx === this.$scope.selector
+        };
     }
 
     select (idx) {
