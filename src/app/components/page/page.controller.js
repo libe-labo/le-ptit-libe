@@ -10,6 +10,7 @@ class PageController {
         $scope.getBodyStyle = this.getBodyStyle.bind(this);
         $scope.getCartelStyle = this.getCartelStyle.bind(this);
         $scope.shareOnFacebook = this.shareOnFacebook.bind(this);
+        $scope.shareOnTwitter = this.shareOnTwitter.bind(this);
         $scope.getDownloadHref = this.getDownloadHref.bind(this);
 
         this.colors = [
@@ -44,6 +45,13 @@ class PageController {
     shareOnFacebook () {
         var url = encodeURIComponent(window.location.origin + window.location.pathname),
             link = 'http://www.facebook.com/sharer/sharer.php?u=' + url;
+        window.open(link, '', 'width=575,height=400,menubar=no,toolbar=no');
+    }
+
+    shareOnTwitter () {
+        var url = encodeURIComponent(window.location.origin + window.location.pathname),
+            text = 'Le P\'tit Libé n°7 : ' + $('.release-title__title').html().replace(/\<br\>/g, ' ') + ' ' + url + ' via @LePtitLibe',
+            link = 'https://twitter.com/intent/tweet?original_referer=&text=' + text;
         window.open(link, '', 'width=575,height=400,menubar=no,toolbar=no');
     }
 }
