@@ -55,9 +55,11 @@
     ul {
         list-style-type: none;
 
+        padding-left: 5em;
+
         li {
             margin: 1em 0;
-            padding-left: 2.5em;
+            // padding-left: 2.5em;
             background-image: url(/assets/images/puce-punaise-bleue.svg);
             background-repeat: no-repeat;
             background-size: 2em auto;
@@ -78,6 +80,17 @@
                 max-width: 85%;
                 margin: 0 auto;
             }
+        }
+
+        .exergue {
+            float: left;
+            display:block;
+
+            width: 30%;
+            margin: 1em 1em .5em 0;
+
+            text-align:left;
+            font-size:.8em;
         }
 
         .legend {
@@ -115,8 +128,16 @@
             }
         }
 
+        &__content {
+            .exergue {
+                width: 45%;
+            }
+        }
+
         p {
             font-size: 1.2em;
+
+            padding: 0 1em;
         }
     }
 }
