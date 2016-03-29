@@ -1,0 +1,66 @@
+.article accordionn {
+    > div {
+        > :not(.libesansrond) {
+            background-image: url(../assets/images/cadre-bas-long.png);
+            background-size: 99.8% 100%;
+            background-repeat: no-repeat;
+
+            margin-top: -0.3em;
+            padding-top: .5em;
+            padding-bottom: 2em;
+
+            p {
+                margin-left: 0;
+                margin-right: 0;
+                padding-left: 0;
+                padding-right: 0;
+
+                font-size: 1em;
+            }
+
+            ul {
+                font-size: 1em;
+            }
+        }
+
+        .libesansrond {
+            position: relative;
+
+            margin-bottom: 0;
+            margin-top: 2em;
+            padding-top: 2em;
+            padding-bottom: 2em;
+
+            background-image: url(../assets/images/cadre-2.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+
+            img {
+                position: absolute;
+                top: 50%;
+                right: 1.2em;
+
+                width: 2em;
+                height: auto;
+
+                -webkit-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .article accordionn {
+        > div {
+            margin: 0 1em;
+            font-size: .9em;
+
+            > .libesansrond {
+                padding-right: 3em;
+            }
+        }
+    }
+}
