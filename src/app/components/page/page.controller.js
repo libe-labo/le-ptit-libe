@@ -14,7 +14,7 @@ class PageController {
         $scope.getDownloadHref = this.getDownloadHref.bind(this);
 
         this.colors = [
-            '#a5cde3', '#76a9c6', '#fff'
+            '#5b9dbe', '#056294', '#f6fbf9'
         ];
     }
 
@@ -49,8 +49,8 @@ class PageController {
     }
 
     shareOnTwitter () {
-        var url = encodeURIComponent(window.location.origin + window.location.pathname),
-            text = 'Le P\'tit Libé n°7 : ' + $('.release-title__title').html().replace(/\<br\>/g, ' ') + ' ' + url + ' via @LePtitLibe',
+        var url = window.location.origin + window.location.pathname,
+            text = encodeURIComponent('Le P\'tit Libé n°8 : le monde du travail expliqué aux enfants #LoiTravail ' + url + ' via @LePtitLibe'),
             link = 'https://twitter.com/intent/tweet?original_referer=&text=' + text;
         window.open(link, '', 'width=575,height=400,menubar=no,toolbar=no');
     }

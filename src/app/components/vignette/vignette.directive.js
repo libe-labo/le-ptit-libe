@@ -17,7 +17,7 @@ export function VignetteDirective() {
     };
 
     function linkFunc(scope, el) {
-        let color = '#6D9DBD',
+        let color = '#1f7cad',
             svg = $('<object>').attr('type', 'image/svg+xml')
                                .attr('data', scope.vignette.imageSrc);
         svg.appendTo($(el));
@@ -47,7 +47,7 @@ export function VignetteDirective() {
 
             svg.find('*').each(function() {
                 if ($(this).attr('id') != null && $(this).attr('id') !== 'clip') {
-                    this.setAttribute('class', '');
+                    // this.setAttribute('class', '');
                     this.setAttribute('fill', color);
                     this.setAttribute('clip-path', 'url(#clip)');
                 }

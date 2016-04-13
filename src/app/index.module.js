@@ -12,6 +12,7 @@ import MainController from './main/main.controller';
 import ArticleController from './article/article.controller';
 import ResourcesController from './resources/resources.controller';
 import NewsletterController from './newsletter/newsletter.controller';
+import CalendarController from './articles/calendar.controller';
 
 import { VignetteDirective } from './components/vignette/vignette.directive';
 import { PictureSwitchDirective } from './components/pictureSwitch/pictureSwitch.directive';
@@ -33,6 +34,7 @@ angular.module('ptitlibe', ['angulartics', 'angulartics.google.analytics',
        .controller('ArticleController', ArticleController)
        .controller('ResourcesController', ResourcesController)
        .controller('NewsletterController', NewsletterController)
+       .controller('CalendarController', CalendarController)
 
        .directive('pictureswitch', PictureSwitchDirective)
        .directive('vignette', VignetteDirective)
