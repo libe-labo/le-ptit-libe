@@ -1,0 +1,41 @@
+{
+    "attribution" : "Une sélection de Coralie Schaub",
+    "resources": [
+        {
+            "img" : "assets/images/2/RESSOURCES/chezmoi.jpg",
+            "title" : "Chez moi, on a des solutions pour le climat&nbsp;!",
+            "subtitle" : "de Philippe Godard, illustré par Guillaume Kashima (Albin Michel, 2015, 15 €). Dès 8 ans.",
+            "description" : "Ça chauffe&nbsp;? La bonne nouvelle, c'est qu'il y a une foule de solutions ! Ici, ce sont les enfants eux-mêmes qui en parlent. Au Bangladesh, Siraj raconte comment la mangrove protège des cyclones. En France, Louise cultive son jardin et Manon troque tout un tas de trucs. Helga l'Islandaise parle de géothermie, Xiaolin la Chinoise d'énergie éolienne. Horacio le Brésilien nous présente sa ville modèle, Curitiba. Au Mali, Dieyanaba attend un four solaire «magique», qui libère les filles de la corvée de bois et leur permet d'aller à l'école... Enthousiasmant, concret et bien documenté."
+        },
+        {
+            "img" : "assets/images/2/RESSOURCES/a-nous-lecologie.jpg",
+            "title" : "A nous l'écologie",
+            "subtitle" : "de Gilles Halais, illustré par Jacques Azam (Milan, 2015, 8,90 €). Dès 8 ans.",
+            "description" : "C'est quoi un écologiste ? C'est quoi les OGM ? D'où vient la pollution de l'air&nbsp;? C'est quoi le changement climatique&nbsp;? Que s'est-il passé lors de la tempête Xynthia&nbsp;? Pourquoi avons-nous besoin des abeilles&nbsp;? Comment se déplacer sans polluer&nbsp;? Toutes les questions - ou presque - que petits et grands se posent, présentées avec clarté à l'aide de malicieuses petites vignettes."
+        },
+        {
+            "img" : "assets/images/2/RESSOURCES/planete-bleue.jpg",
+            "title" : "Sur quelle planète bleue ai-je atterri&nbsp;?",
+            "subtitle" : "de Anna Alter avec Hervé Le Treut, illustré par Lucie Maillot (Editions Le Pommier, 2015, 13,90 €). Dès 7 ans.",
+            "description" : "Comprendre comment fonctionne le climat n'est pas chose aisée. Océans, atmosphère, nuages, continents, hommes, qui agit sur son évolution et comment&nbsp;? Que sait-on&nbsp;? Qu'ignore-t-on encore&nbsp;? Alors qu'on entend beaucoup de bêtises sur le sujet, le (grand) climatologue Hervé Le Treut fait le point. Grimper sur ses solides épaules, c'est explorer les couleurs du ciel, démonter la mécanique de notre planète bleue comme une orange, s'aventurer dans son histoire brûlante et glaçante, prendre sa température et réaliser qu'il faut à tout prix soigner son « petit début de fièvre ». A mettre entre toutes les mains, de 7 à 77 ans."
+        },
+        {
+            "img" : "assets/images/2/RESSOURCES/protegeons.jpg",
+            "title" : "Protégeons la planète&nbsp;!",
+            "subtitle" : "de Jean-Michel Billioud, illustré par Didier Balicevic (Nathan, 2015, 11,95 €). Dès 6 ans.",
+            "description" : "Les livres pop-up de la collection Kididoc sont toujours ludiques et efficaces. Celui-ci sensibilise les enfants à la préservation de l'environnement au sens large : océans, forêts, biodiversité, eau, climat... Il y est aussi question d'économies d'énergie, d'énergies du futur et de tri des déchets."
+        },
+        {
+            "img" : "assets/images/2/RESSOURCES/eldoradeau.jpg",
+            "title" : "L'eldorad'eau",
+            "subtitle" : "de Sandrine Dumas Roy, illustré par Jérôme Peyrat (Les Editions du Ricochet, 2013, 14,70 €). Dès 5 ans.",
+            "description" : "Ce très chouette album, aux textes et dessins pleins de finesse et d'humour, a déjà deux ans. Pourtant, il est d'une cruelle actualité, puisqu'il traite de la question des réfugiés climatiques. En faisant réaliser que personne n'est a l'abri. Ici, le «migrant» est un pauvre cheval qui a dû quitter sa Normandie inondée par la montée des mers. Epuisé après un long et périlleux voyage, il arrive enfin en Tanzanie. Hélas, il est bloqué à la douane par des phacochères en uniforme de police, furibards : «Dehors l'étranger, pas de vous chez nous&nbsp;!». Jusqu'à ce qu'un éléphant se souvienne de l'histoire de ce zèbre, qui au temps de la grande sécheresse, avait dû s'exiler dans un pays du Nord, où il avait lui aussi été persona non grata. Une histoire d'animaux bien proche de ce qui se passe parfois chez les hommes."
+        },
+        {
+            "img" : "assets/images/2/RESSOURCES/climat-pas.jpg",
+            "title" : "Le climat à petits pas",
+            "subtitle" : "de Georges Feterman, illustré par Gilles Lerouvillois (Actes Sud Junior, 2013, 12,70 €). Dès 9 ans.",
+            "description" : "Comprendre la différence entre météo et climat (que bien des adultes n'ont toujours pas saisie). Apprendre à fabriquer un arc-en-ciel ou à reproduire l'effet de serre dans sa cuisine, avec deux gobelets et un saladier en verre. Observer les effets déjà concrets du changement climatique sur la nature. Savoir quels sont les risques pour demain et comment les éviter. Rigoler en regardant les dessins et terminer par un quiz. Complet et astucieux."
+        }
+    ]
+}
