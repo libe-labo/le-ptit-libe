@@ -43,7 +43,7 @@ class MenuController {
     }
 
     getVignetteRepetition () {
-        return _.range(1, 7);
+        return _.range(1, 4);
     }
 
     getVignetteClass (idx) {
