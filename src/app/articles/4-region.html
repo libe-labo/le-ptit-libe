@@ -1,0 +1,60 @@
+<div ng-controller="MyRegion">
+    <table style="background-image:url(assets/images/4/cadre-carte.png);background-size:100% 100%;background-repeat:no-repeat;">
+        <tr style="vertical-align:top;">
+            <td width="40%;">
+                <object id="map" type="image/svg+xml" data="assets/images/4/carte-carte.svg" style="width:80%;margin:2em 1em;"></object>
+            </td>
+            <td style="padding:1em .5em;">
+                <span class="color-fg uppercase libesansrond">{{ data.name }}</span><br>
+                <span ng-bind-html="data.intro"></span>
+            </td>
+        </tr>
+    </table>
+
+
+    <p class="color-fg libesansrond uppercase nobottommargin">
+        La ville chef-lieu de région (future capitale)
+    </p>
+    <p ng-bind-html="data.capital"></p>
+
+
+    <p class="color-fg libesansrond uppercase nobottommargin">
+        Ils y sont nés
+    </p>
+    <table style="width:100%;text-align:center;font-size:.9em;">
+        <tr>
+            <td ng-repeat="person in data.famous">
+                <img style="width:100px;" src="assets/images/4/regions/{{ person.pic }}.jpg"><br>
+                <span ng-bind-html="person.text"></span>
+            </td>
+        </tr>
+    </table>
+
+
+    <p class="color-fg libesansrond uppercase nobottommargin">
+        Qu'est-ce qu'elle a de spécial ma région&nbsp;?
+    </p>
+    <p ng-repeat="row in data.description" ng-bind-html="row"></p>
+
+
+    <p class="color-fg libesansrond uppercase nobottommargin">
+        Et pour les gourmands&nbsp;?
+    </p>
+    <p ng-bind-html="data.food"></p>
+
+
+    <p class="color-fg">
+        <img style="width:33%;margin-left:10%;" src="assets/images/4/bulle-carte.svg">
+        <br>
+        <img src="assets/images/4/perso-carte.svg" style="float:left;width:15%;margin-right:1em;margin-bottom:1em;">
+        <span ng-bind-html="data.language"></span>
+    </p>
+
+    <p>
+        <br>
+        <a ui-sref="article({ article : '4' })" ui-sref-opts="{ reload : true }" style="text-decoration:none;" class="libesansrond color2-fg">
+            <img src="assets/images/fleche-gauche.svg" style="width:20px;margin-bottom:1px;">
+            Revenir à la carte
+        </a>
+    </p>
+</div>

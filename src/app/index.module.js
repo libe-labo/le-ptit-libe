@@ -13,6 +13,8 @@ import ArticleController from './article/article.controller';
 import ResourcesController from './resources/resources.controller';
 import NewsletterController from './newsletter/newsletter.controller';
 
+import MyRegion from './articles/MyRegion.controller.js';
+
 import { VignetteDirective } from './components/vignette/vignette.directive';
 import { PictureSwitchDirective } from './components/pictureSwitch/pictureSwitch.directive';
 
@@ -32,6 +34,8 @@ angular.module('ptitlibe', ['angulartics', 'angulartics.google.analytics',
        .controller('ArticleController', ArticleController)
        .controller('ResourcesController', ResourcesController)
        .controller('NewsletterController', NewsletterController)
+
+       .controller('MyRegion', MyRegion)
 
        .directive('pictureswitch', PictureSwitchDirective)
        .directive('vignette', VignetteDirective);

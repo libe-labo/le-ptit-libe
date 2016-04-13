@@ -43,14 +43,15 @@ class MenuController {
     }
 
     getVignetteRepetition () {
-        return _.range(1, 7);
+        return _.range(1, 6);
     }
 
     getVignetteClass (idx) {
         return {
-            'col-md-offset-3' : [1, 4].indexOf(idx) >= 0,
-            'centered' : idx === 6,
-            'large' : idx === 6
+            'col-md-offset-3' : idx === 1,
+            'col-md-offset-4' : idx === 4,
+            'centered' : idx === 5,
+            'large' : idx === 5
         };
     }
 

@@ -20,6 +20,9 @@ class ArticleController {
     }
 
     getCurrentArticle () {
+        if (this.$stateParams.article !== String(parseInt(this.$stateParams.article))) {
+            return '4-region';
+        }
         return this.$stateParams.article;
     }
 
@@ -31,10 +34,16 @@ class ArticleController {
     }
 
     getArticleTitle () {
+        if (this.$stateParams.article !== String(parseInt(this.$stateParams.article))) {
+            return this.getTitle(4);
+        }
         return this.getTitle(this.$stateParams.article);
     }
 
     getVignetteImage () {
+        if (this.$stateParams.article !== String(parseInt(this.$stateParams.article))) {
+            return 'assets/images/menu/menu-4.svg';
+        }
         return `assets/images/menu/menu-${this.$stateParams.article}.svg`;
     }
 }

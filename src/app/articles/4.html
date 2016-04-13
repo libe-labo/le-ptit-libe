@@ -1,0 +1,35 @@
+<p>
+    <object id="map" type="image/svg+xml" data="assets/images/4/carte-carte.svg"></object>
+</p>
+<script type="text/javascript">
+    var ids = ['#normandie', '#bretagne', '#pays_de_la_loire', '#aquitaine', '#languedoc', '#alsace', '#auvergne', '#bourgogne', '#centre_val_de_loire', '#corse', '#ile_de_france', '#nord_pas_de_calais', '#provence', '#guadeloupe', '#guyane', '#martinique', '#réunion', '#mayotte'];
+    $('#map').on('load', function() {
+        var $svg = $($(this)[0].getSVGDocument());
+
+        <!-- $svg.find('*').css('pointer-events', 'none'); -->
+        <!-- $svg.find('g').css('pointer-events', 'all'); -->
+        $svg.find(ids.join(', ')).each(function() {
+            var $this = $(this);
+
+            if ($(this)[0].tagName === 'g') {
+                $this = $(this).children();
+            }
+
+            $(this)
+                .css({
+                    'fill': '#f4a300',
+                    'pointer-events': 'all',
+                    'cursor': 'pointer'
+                })
+                .on('mouseenter', function() {
+                    $this.css('fill', '#008a90');
+                })
+                .on('mouseleave', function() {
+                    $this.css('fill', '#f4a300');
+                })
+                .on('click', function() {
+                    window.location.href = window.location.pathname + '#/4-' + $(this).attr('id').toLowerCase() + '/';
+                });
+        });
+    });
+</script>
