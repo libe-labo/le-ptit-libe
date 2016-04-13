@@ -27,7 +27,7 @@ class ArticleController {
         if (article != null) {
             return this.titles.articles[article];
         }
-        return this.titles.title.replace(' ', '<br>');
+        return this.titles.title.replace('secrets ', 'secrets<br>');
     }
 
     getArticleTitle () {

@@ -1,0 +1,60 @@
+.calendar {
+    position: relative;
+
+    height: 39em;
+    margin-bottom: 1em !important;
+
+    &__item {
+        position: absolute;
+
+        width: 40%;
+        height: 4em;
+        padding: 1.3em 1em;
+
+        background-image: url('../assets/images/boite2.svg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+
+        transition: all 1s;
+
+        &:last-of-type {
+            height: 8em;
+        }
+    }
+
+    &__selector {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+
+        text-align: center;
+
+        cursor: pointer;
+
+        img {
+            width: 35px !important;
+        }
+
+        span {
+            font-size: .8em;
+            line-height: 0;
+        }
+
+        .vendor(transform, translate(-50%, 0));
+
+        &--wrapper {
+            position: relative;
+        }
+
+        &:first-of-type {
+            left: 25%;
+        }
+
+        &:last-of-type {
+            left: 75%;
+        }
+    }
+}

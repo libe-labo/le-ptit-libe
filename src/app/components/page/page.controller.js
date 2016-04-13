@@ -13,7 +13,7 @@ class PageController {
         $scope.getDownloadHref = this.getDownloadHref.bind(this);
 
         this.colors = [
-            '#a5cde3', '#76a9c6', '#fff'
+            '#c7aace', '#71519d', '#f9f7fb'
         ];
     }
 

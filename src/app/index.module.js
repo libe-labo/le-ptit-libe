@@ -15,6 +15,7 @@ import NewsletterController from './newsletter/newsletter.controller';
 
 import { VignetteDirective } from './components/vignette/vignette.directive';
 import { PictureSwitchDirective } from './components/pictureSwitch/pictureSwitch.directive';
+import { CalendarDirective } from './components/calendar/calendar.directive';
 
 angular.module('ptitlibe', ['angulartics', 'angulartics.google.analytics',
                             'ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize',
@@ -34,4 +35,5 @@ angular.module('ptitlibe', ['angulartics', 'angulartics.google.analytics',
        .controller('NewsletterController', NewsletterController)
 
        .directive('pictureswitch', PictureSwitchDirective)
-       .directive('vignette', VignetteDirective);
+       .directive('vignette', VignetteDirective)
+       .directive('calendar', CalendarDirective);

@@ -1,0 +1,23 @@
+div.calendar.as-p
+    div.calendar__item(ng-repeat="item in items", ng-style="getStyleFor(item)")
+    span.calendar__selector(ng-click="select(0)")
+        img(ng-src='{{ getSwitchSrc(0) }}')
+        br
+        span
+            | année
+            br
+            | romaine
+    span.calendar__selector(ng-click="select(1)")
+        img(ng-src='{{ getSwitchSrc(1) }}')
+        br
+        span
+            | année
+            br
+            | de confusion
+    span.calendar__selector(ng-click="select(2)")
+        img(ng-src='{{ getSwitchSrc(2) }}')
+        br
+        span
+            | année
+            br
+            | julienne
