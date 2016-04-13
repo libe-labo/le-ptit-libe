@@ -20,7 +20,7 @@ class MainController {
             return this.titles.articles[article];
         }
 
-        return this.titles.title.replace(' ', '<br>');
+        return this.titles.title.replace('la vie ', 'la vie<br>');
     }
 }
 
