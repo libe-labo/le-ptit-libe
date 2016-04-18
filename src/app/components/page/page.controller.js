@@ -50,7 +50,7 @@ class PageController {
 
     shareOnTwitter () {
         var url = encodeURIComponent(window.location.origin + window.location.pathname),
-            text = 'Le P\'tit Libé n°7 : ' + $('.release-title__title').html().replace(/\<br\>/g, ' ') + ' ' + url + ' via @LePtitLibe',
+            text = 'Le P\'tit Libé n°7 : ' + $('.release-title__title').html().replace(/<br>/g, ' ') + ' ' + url + ' via @LePtitLibe',
             link = 'https://twitter.com/intent/tweet?original_referer=&text=' + text;
         window.open(link, '', 'width=575,height=400,menubar=no,toolbar=no');
     }
