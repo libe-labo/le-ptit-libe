@@ -7,10 +7,8 @@ export function PictureSwitchDirective() {
         restrict: 'E',
         templateUrl: 'app/components/pictureSwitch/pictureSwitch.html',
         scope: {
-            first: '=',
-            second: '=',
-            firstLabel: '=',
-            secondLabel: '='
+            labels: '=',
+            pictures: '='
         },
         link: linkFunc,
         controller: PictureSwitch,
@@ -30,34 +28,32 @@ class PictureSwitch {
 
         this.$scope = $scope;
 
-        $scope.first = this.first;
-        $scope.second = this.second;
-        $scope.firstLabel = this.firstLabel;
-        $scope.secondLabel = this.secondLabel;
-        $scope.name = `rb${String(parseInt(Math.random() * 100 / 100))}`;
         $scope.selector = 0;
 
-        $scope.getFirstPictureStyle = this.getFirstPictureStyle.bind(this);
-        $scope.getSecondPictureStyle = this.getSecondPictureStyle.bind(this);
+        $scope.getPictures = this.getPictures.bind(this);
+        $scope.getPictureStyle = this.getPictureStyle.bind(this);
+        $scope.getLabels = this.getLabels.bind(this);
         $scope.getSwitchSrc = this.getSwitchSrc.bind(this);
         $scope.getSwitchClass = this.getSwitchClass.bind(this);
         $scope.select = this.select.bind(this);
     }
 
-    getFirstPictureStyle () {
+    getPictures () {
+        return this.pictures;
+    }
+
+    getPictureStyle (idx) {
         return {
-            opacity : this.$scope.selector ? 0 : 1
+            opacity: this.$scope.selector === idx ? 1 : 0
         };
     }
 
-    getSecondPictureStyle () {
-        return {
-            opacity : this.$scope.selector
-        };
+    getLabels () {
+        return this.labels;
     }
 
-    getSwitchSrc () {
-        return 'assets/images/fleche-gauche.svg';
+    getSwitchSrc (idx) {
+        return 'assets/images/pictureswitch' + (idx === this.$scope.selector ? '-actif' : '') + '.svg';
     }
 
     getSwitchClass (idx) {

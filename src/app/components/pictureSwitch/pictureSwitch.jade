@@ -1,12 +1,7 @@
 div.picture-switch
-    img.picture-switch__picture.picture-switch__picture--first(ng-src='{{first}}', ng-style='getFirstPictureStyle()')
-    img.picture-switch__picture.picture-switch__picture--second(ng-src='{{second}}', ng-style='getSecondPictureStyle()')
+    img.picture-switch__picture(ng-repeat="(idx, picture) in getPictures()", ng-src='{{picture}}', ng-style='getPictureStyle(idx)')
     div.picture-switch__selector--wrapper
-        span.picture-switch__selector.picture-switch__selector--first(ng-click="select(0)", ng-class="getSwitchClass(0)")
-            img(ng-src='{{ getSwitchSrc(0) }}')
+        span.picture-switch__selector.picture-switch__selector(ng-repeat="(idx, label) in getLabels()", ng-click="select(idx)", ng-class="getSwitchClass(idx)")
+            img(ng-src='{{ getSwitchSrc(idx) }}')
             br
-            span(ng-bind-html="firstLabel")
-        span.picture-switch__selector.picture-switch__selector--second(ng-click="select(1)", ng-class="getSwitchClass(1)")
-            img(ng-src='{{ getSwitchSrc(1) }}')
-            br
-            span(ng-bind-html="secondLabel")
+            span(ng-bind-html="label")

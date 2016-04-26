@@ -1,25 +1,23 @@
 .picture-switch {
     position: relative;
 
-    // margin-bottom: 3em;
-
     &__picture {
-        // margin-bottom: 1em;
+        transition: opacity .4s linear;
 
-        .vendor(transition, opacity .4s linear);
+        position: absolute;
+        top: 0;
+        left: 0;
 
-        &--second {
-            position: absolute;
-            top: 0;
-            left: 0;
+        opacity: 0;
 
-            opacity: 0;
+        &:first-of-type {
+            position: relative;
+
+            opacity: 1;
         }
     }
 
     &__selector {
-        position: absolute;
-
         text-align: center;
 
         cursor: pointer;
@@ -32,18 +30,13 @@
             font-size: .8em;
         }
 
-        .vendor(transform, translate(-50%, 0));
+        transform: translate(-50%, 0);
 
         &--wrapper {
-            position: relative;
-        }
+            display: flex;
+            justify-content: space-around;
 
-        &--first {
-            left: 25%;
-        }
-
-        &--second {
-            left: 75%;
+            margin-top: 1em;
         }
     }
 }
