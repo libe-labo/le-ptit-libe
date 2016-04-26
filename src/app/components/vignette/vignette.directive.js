@@ -67,8 +67,6 @@ export function VignetteDirective() {
                     };
                 window.setTimeout(updateR, timeout);
             })();
-
-            scope.$emit('vLoaded');
         });
     }
 

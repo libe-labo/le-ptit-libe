@@ -5,21 +5,9 @@ div.menuu--wrapper(ng-controller="MenuController")
         div
             p.release-title__title(ng-bind-html="getTitle()")
         span.release-title__date.color-fg 7.01.16
-    div.row.centered.menuu
-        div.row
-            div.menuu__item.col-xs-4.col-xs-offset-4.col-md-2.col-md-offset-5.centered
-                vignette(image-src="getVignetteImage(0)", article-id="0")
-                a.color2-fg(ng-bind-html="getTitle(0)", ui-sref="article({ article : 0 })", ui-sref-opts="{ reload : true }")
-        div.row
-            div.menuu__item.col-xs-4.col-md-2(ng-repeat='idx in getVignetteRepetition(row)',
-                                    ng-class='getVignetteClass(idx)')
-                vignette(image-src="getVignetteImage(idx)", article-id="idx")
-                a.color2-fg(ng-bind-html="getTitle(idx)", ui-sref="article({ article : idx })", ui-sref-opts="{ reload : true }")
-    //- div.row
-    //-     p.centered
-    //-         a.button.large.color2-fg(ui-sref="resources()", style="margin-top:1em;")
-    //-             img(src='assets/images/resources.svg')
-    //-             br
-    //-             | Ressources
+    div.centered.menuu
+        div.menuu__item(ng-repeat='idx in getVignetteRepetition(row)')
+            vignette(image-src="getVignetteImage(idx)", article-id="idx")
+            a.color2-fg(ng-bind-html="getTitle(idx)", ui-sref="article({ article : idx })", ui-sref-opts="{ reload : true }")
     div.row
         p.centered(style="margin-top:5em;")
