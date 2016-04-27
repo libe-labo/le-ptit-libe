@@ -13,11 +13,8 @@ class PageController {
         $scope.getCartelStyle = this.getCartelStyle.bind(this);
         $scope.shareOnFacebook = this.shareOnFacebook.bind(this);
         $scope.shareOnTwitter = this.shareOnTwitter.bind(this);
-        $scope.getDownloadHref = this.getDownloadHref.bind(this);
 
-        this.colors = [
-            '#a5cde3', '#76a9c6', '#fff'
-        ];
+        this.colors = ['#85B974', '#016734', '#F5FBF9'];
 
         this.$scope = $scope;
     }
@@ -26,24 +23,18 @@ class PageController {
         var bgImg = `linear-gradient(${this.colors[0]}, ${this.colors[1]})`;
 
         if (!this.$state.is('newsletter')) {
-            bgImg = `url(assets/images/background.svg),` + bgImg;
+            bgImg = `url(assets/images/background.svg), ${bgImg}`;
         }
 
         return {
-            'background-color' : this.colors[1],
-            'background-image' : bgImg,
-            'background-position' : `center bottom ${$('.footer').outerHeight() * 1.5}px`
+            'background-color': this.colors[1],
+            'background-image': bgImg,
+            'background-position': `center bottom ${$('.footer').outerHeight() * 1.5}px`
         };
     }
 
     getCartelStyle () {
-        return {
-            'background-color' : this.colors[2]
-        };
-    }
-
-    getDownloadHref () {
-        return `assets/pdf/le-ptit-libe.pdf`;
+        return { 'background-color': this.colors[2] };
     }
 
     shareOnFacebook () {
