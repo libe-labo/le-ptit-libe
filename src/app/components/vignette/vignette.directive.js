@@ -17,7 +17,7 @@ export function VignetteDirective() {
     };
 
     function linkFunc(scope, el) {
-        let color = '#6D9DBD',
+        let color = scope.$parent.getVignetteColor(),
             svg = $('<object>').attr('type', 'image/svg+xml')
                                .attr('data', scope.vignette.imageSrc);
         svg.appendTo($(el));

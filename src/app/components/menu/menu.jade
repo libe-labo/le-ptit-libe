@@ -4,7 +4,7 @@ div.menuu--wrapper(ng-controller="MenuController")
             p N°{{releaseN}}
         div
             p.release-title__title(ng-bind-html="getTitle()")
-        span.release-title__date.color-fg 7.01.16
+        span.release-title__date.color-fg avril 2016
     div.centered.menuu
         div.menuu__item(ng-repeat='idx in getVignetteRepetition(row)')
             vignette(image-src="getVignetteImage(idx)", article-id="idx")

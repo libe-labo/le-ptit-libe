@@ -9,32 +9,52 @@ class PageController {
         this.$stateParams = $stateParams;
         this.$state = $state;
 
+        $scope.getVignetteColor = this.getVignetteColor.bind(this);
         $scope.getBodyStyle = this.getBodyStyle.bind(this);
-        $scope.getCartelStyle = this.getCartelStyle.bind(this);
         $scope.shareOnFacebook = this.shareOnFacebook.bind(this);
         $scope.shareOnTwitter = this.shareOnTwitter.bind(this);
 
-        this.colors = ['#85B974', '#016734', '#F5FBF9'];
+        let selectorsToColor = {
+            'body': ['background-color', 'dark'],
+            'body .color-fg': ['color', 'light'],
+            'body .container > div': ['background-color', 'cartel']
+        };
+        this.colors = {};
+        for (let i = 0; i < document.styleSheets.length; ++i) {
+            let stylesheet = document.styleSheets[i];
+            if (stylesheet.href != null && stylesheet.href.match(/index\.css$/) != null) {
+                for (let j = 0; j < stylesheet.cssRules.length; ++j) {
+                    for (let k in selectorsToColor) {
+                        if (stylesheet.cssRules[j].selectorText === k) {
+                            this.colors[selectorsToColor[k][1]] =
+                                stylesheet.cssRules[j].style[selectorsToColor[k][0]];
+                        }
+                    }
+
+                    if (Object.keys(this.colors).length >= 3) { break; }
+                }
+            }
+        }
 
         this.$scope = $scope;
     }
 
+    getVignetteColor () {
+        return this.colors.light;
+    }
+
     getBodyStyle () {
-        var bgImg = `linear-gradient(${this.colors[0]}, ${this.colors[1]})`;
+        var bgImg = `linear-gradient(${this.colors.light}, ${this.colors.dark})`;
 
         if (!this.$state.is('newsletter')) {
             bgImg = `url(assets/images/background.svg), ${bgImg}`;
         }
 
         return {
-            'background-color': this.colors[1],
+            'background-color': this.colors.dark,
             'background-image': bgImg,
             'background-position': `center bottom ${$('.footer').outerHeight() * 1.5}px`
         };
-    }
-
-    getCartelStyle () {
-        return { 'background-color': this.colors[2] };
     }
 
     shareOnFacebook () {

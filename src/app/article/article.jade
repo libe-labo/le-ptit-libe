@@ -1,9 +1,9 @@
-.row.article(ng-style="getCartelStyle()")
+.row.article
     div
         p.article__title.color2-fg
             vignette(image-src="getVignetteImage()")
             span(ng-bind-html="getArticleTitle()")
         p
         div.article__content(data-editable, data-name="content", ng-include="'app/articles/' + getCurrentArticle() + '.html'")
-.row(ng-style="getCartelStyle()")
+.row
     div(ng-include="'app/components/menu/menu.html'")
