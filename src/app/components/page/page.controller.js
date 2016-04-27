@@ -22,7 +22,8 @@ class PageController {
         this.colors = {};
         for (let i = 0; i < document.styleSheets.length; ++i) {
             let stylesheet = document.styleSheets[i];
-            if (stylesheet.href != null && stylesheet.href.match(/index\.css$/) != null) {
+            if (stylesheet.href == null) { continue; }
+            if (stylesheet.href.match(/(index)|(app-\w+)\.css$/) != null) {
                 for (let j = 0; j < stylesheet.cssRules.length; ++j) {
                     for (let k in selectorsToColor) {
                         if (stylesheet.cssRules[j].selectorText === k) {
