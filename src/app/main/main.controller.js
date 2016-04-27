@@ -1,11 +1,12 @@
 'use strict';
 
 class MainController {
-    constructor ($scope, titles) {
+    constructor ($scope, titles, $stateParams) {
         'ngInject';
 
         this.$scope = $scope;
         this.titles = titles;
+        this.$stateParams = $stateParams;
 
         $scope.getTitle = this.getTitle.bind(this);
         $scope.$parent.getChapo = this.getChapo.bind(this);

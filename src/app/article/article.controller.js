@@ -1,33 +1,20 @@
 'use strict';
 
-class ArticleController {
-    constructor ($scope, $stateParams, titles) {
+import MainController from '../main/main.controller';
+
+class ArticleController extends MainController {
+    constructor ($scope, titles, $stateParams) {
         'ngInject';
 
-        this.$scope = $scope;
-        this.$stateParams = $stateParams;
-        this.titles = titles;
+        super($scope, titles, $stateParams);
 
         $scope.getCurrentArticle = this.getCurrentArticle.bind(this);
-        $scope.getTitle = this.getTitle.bind(this);
         $scope.getArticleTitle = this.getArticleTitle.bind(this);
         $scope.getVignetteImage = this.getVignetteImage.bind(this);
-        $scope.$parent.getChapo = this.getChapo.bind(this);
-    }
-
-    getChapo () {
-        return this.titles.chapo;
     }
 
     getCurrentArticle () {
         return this.$stateParams.article;
-    }
-
-    getTitle (article) {
-        if (article != null) {
-            return this.titles.articles[article];
-        }
-        return this.titles.title.replace(' ', '<br>');
     }
 
     getArticleTitle () {
