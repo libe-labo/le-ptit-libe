@@ -1,24 +1,23 @@
 div.footer
     p.centered
-        br
-        a.button(ui-sref="newsletter()")
+        a(ui-sref="newsletter()")
             img(src="assets/images/mail.svg")
             br
             | newsletter
-        a.button.button--share(ng-init="hover=false", ng-class="{'hover':hover}")
+        a.share(ng-init="hover=false", ng-class="{'hover':hover}")
             img(src="assets/images/facebook.svg", ng-click="shareOnFacebook()", ng-mouseenter="hover=true", ng-mouseleave="hover=false")
             img(src="assets/images/twitter.svg", ng-click="shareOnTwitter()", ng-mouseenter="hover=true", ng-mouseleave="hover=false")
             br
             | partage-moi
-        a.button(href="mailto:LePtitLibe@liberation.fr", target="_blank")
+        a(href="mailto:LePtitLibe@liberation.fr", target="_blank")
             img(src="assets/images/ecris-moi.svg")
             br
             | écris-moi
-        a.button(ng-href="{{ getDownloadHref() }}", target="_blank")
+        a(ng-href="{{ getDownloadHref() }}", target="_blank")
             img(src="assets/images/imprimer.svg")
             br
             | imprime-moi
-        a.button(href="http://www.liberation.fr/apps/ptit-libe/")
+        a(href="http://www.liberation.fr/apps/ptit-libe/")
             img(src="assets/images/accueil.svg")
             br
             | accueil
