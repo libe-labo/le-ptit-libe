@@ -4,6 +4,8 @@ class PageController {
     constructor ($scope, $stateParams, $state) {
         'ngInject';
 
+        $scope.releaseN = 9;
+
         this.$stateParams = $stateParams;
         this.$state = $state;
 
@@ -16,6 +18,8 @@ class PageController {
         this.colors = [
             '#a5cde3', '#76a9c6', '#fff'
         ];
+
+        this.$scope = $scope;
     }
 
     getBodyStyle () {
@@ -50,7 +54,9 @@ class PageController {
 
     shareOnTwitter () {
         var url = encodeURIComponent(window.location.origin + window.location.pathname),
-            text = 'Le P\'tit Libé n°7 : ' + $('.release-title__title').html().replace(/<br>/g, ' ') + ' ' + url + ' via @LePtitLibe',
+            text = 'Le P\'tit Libé n°' + this.$scope.releaseN +
+                   ' : ' + $('.release-title__title').html().replace(/<br>/g, ' ') +
+                   ' ' + url + ' via @LePtitLibe',
             link = 'https://twitter.com/intent/tweet?original_referer=&text=' + text;
         window.open(link, '', 'width=575,height=400,menubar=no,toolbar=no');
     }
