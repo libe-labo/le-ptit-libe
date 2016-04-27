@@ -1,5 +1,7 @@
 'use strict';
 
+import { allIndexesOf, replaceAt, getCenterValue } from '../components/utils/utils';
+
 class MainController {
     constructor ($scope, titles, $stateParams) {
         'ngInject';
@@ -16,7 +18,11 @@ class MainController {
             return this.titles.articles[article];
         }
 
-        return this.titles.title.replace(' ', '<br>');
+        return replaceAt(
+            this.titles.title,
+            getCenterValue(allIndexesOf(this.titles.title, ' ')),
+            '<br>'
+        );
     }
 }
 

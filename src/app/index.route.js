@@ -12,7 +12,7 @@ let resolve = function($q, $http) {
         if (response.status === 200) {
             if (typeof(response.data) === typeof('')) { response.data = JSON.parse(response.data); }
             response.data.title = addNbSp(response.data.title);
-            response.data.articles = _.map(response.data.articles, addNbSp);
+            response.data.articles = _.map(response.data.chapters, addNbSp);
             deferred.resolve(response.data);
         } else {
             deferred.reject(response.status);
