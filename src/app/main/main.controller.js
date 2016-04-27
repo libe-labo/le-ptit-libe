@@ -27,10 +27,3 @@ class MainController {
 }
 
 export default MainController;
-
-import { TitlesResolve } from '../components/page/page.controller';
-export function MainControllerResolve() {
-    return {
-        titles : TitlesResolve
-    };
-}

@@ -27,10 +27,3 @@ class ArticleController extends MainController {
 }
 
 export default ArticleController;
-
-import { TitlesResolve } from '../components/page/page.controller';
-export function ArticleControllerResolve() {
-    return {
-        titles : TitlesResolve
-    };
-}
