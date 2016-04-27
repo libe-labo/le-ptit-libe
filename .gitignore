@@ -7,7 +7,7 @@ bower_components/
 dist/
 
 src/app/articles/*.html
-src/assets/content/*.json
+src/assets/**/*.json
 src/assets/images/menu/*.svg
 src/assets/images/background.svg
 src/assets/pdf/*.pdf

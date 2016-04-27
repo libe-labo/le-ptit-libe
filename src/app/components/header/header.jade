@@ -5,6 +5,4 @@ div.header(ng-controller='HeaderController')
         img(alt="Le P'tit Libé", src="assets/images/logo.svg")
     div.header__intro(ng-class='getIntroClass()')
         p.header__intro__inner(ng-class='getIntroInnerClass()')
-            span(ng-repeat-start='chapo in getChapo()', ng-bind-html="chapo")
-            br
-            br(ng-repeat-end)
+            | Lorem ipsum dolor sit amet

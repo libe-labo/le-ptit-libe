@@ -9,11 +9,6 @@ class MainController {
         this.$stateParams = $stateParams;
 
         $scope.getTitle = this.getTitle.bind(this);
-        $scope.$parent.getChapo = this.getChapo.bind(this);
-    }
-
-    getChapo () {
-        return this.titles.chapo;
     }
 
     getTitle (article) {

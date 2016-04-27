@@ -60,9 +60,9 @@ class Accordionn {
 
     getSign (idx) {
         if (this.$scope.signs[idx] === '-') {
-            return 'assets/images/moins.svg';
+            return 'assets/images/components/moins.svg';
         } else {
-            return 'assets/images/plus.svg';
+            return 'assets/images/components/plus.svg';
         }
     }
 

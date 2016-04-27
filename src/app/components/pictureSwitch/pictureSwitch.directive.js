@@ -53,7 +53,9 @@ class PictureSwitch {
     }
 
     getSwitchSrc (idx) {
-        return 'assets/images/pictureswitch' + (idx === this.$scope.selector ? '-actif' : '') + '.svg';
+        return 'assets/images/components/pictureswitch' +
+               (idx === this.$scope.selector ? '-actif' : '') +
+               '.svg';
     }
 
     getSwitchClass (idx) {

@@ -1,24 +1,24 @@
 div.footer
     p.centered
         a(ui-sref="newsletter()")
-            img(src="assets/images/mail.svg")
+            img(src="assets/images/footer/mail.svg")
             br
             | newsletter
         a.share(ng-init="hover=false", ng-class="{'hover':hover}")
-            img(src="assets/images/facebook.svg", ng-click="shareOnFacebook()", ng-mouseenter="hover=true", ng-mouseleave="hover=false")
-            img(src="assets/images/twitter.svg", ng-click="shareOnTwitter()", ng-mouseenter="hover=true", ng-mouseleave="hover=false")
+            img(src="assets/images/footer/facebook.svg", ng-click="shareOnFacebook()", ng-mouseenter="hover=true", ng-mouseleave="hover=false")
+            img(src="assets/images/footer/twitter.svg", ng-click="shareOnTwitter()", ng-mouseenter="hover=true", ng-mouseleave="hover=false")
             br
             | partage-moi
         a(href="mailto:LePtitLibe@liberation.fr", target="_blank")
-            img(src="assets/images/ecris-moi.svg")
+            img(src="assets/images/footer/ecris-moi.svg")
             br
             | écris-moi
         a(href="assets/pdf/le-ptit-libe.pdf", target="_blank")
-            img(src="assets/images/imprimer.svg")
+            img(src="assets/images/footer/imprimer.svg")
             br
             | imprime-moi
         a(href="http://www.liberation.fr/apps/ptit-libe/")
-            img(src="assets/images/accueil.svg")
+            img(src="assets/images/footer/accueil.svg")
             br
             | accueil
     p

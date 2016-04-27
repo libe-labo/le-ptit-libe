@@ -7,12 +7,11 @@ let resolve = function($q, $http) {
 
     $http({
         method: 'GET',
-        url: `assets/content/titles.json`
+        url: `assets/titles.json`
     }).then(function(response) {
         if (response.status === 200) {
             if (typeof(response.data) === typeof('')) { response.data = JSON.parse(response.data); }
             response.data.title = addNbSp(response.data.title);
-            response.data.chapo = _.map(response.data.chapo, addNbSp);
             response.data.articles = _.map(response.data.articles, addNbSp);
             deferred.resolve(response.data);
         } else {

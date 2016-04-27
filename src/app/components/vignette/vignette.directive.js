@@ -74,9 +74,7 @@ export function VignetteDirective() {
 }
 
 class VignetteController {
-    constructor ($stateParams) {
+    constructor () {
         'ngInject';
-
-        this.$stateParams = $stateParams;
     }
 }
