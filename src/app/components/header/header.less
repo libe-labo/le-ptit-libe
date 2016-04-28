@@ -3,12 +3,6 @@
     max-width: 640px;
     margin: 0 auto;
 
-    text-align: center;
-
-    h1 {
-        display: none;
-    }
-
     img {
         width: 200px;
     }
@@ -25,30 +19,7 @@
         transition: padding .4s linear, border-width .4s linear;
 
         &__inner {
-            max-height: 750px;
-
             margin: 0;
-            padding: 0;
-
-            text-align: left;
-
-            opacity: 1;
-
-            transition: max-height .7s linear;
-
-            br:last-of-type {
-                display: none;
-            }
-        }
-
-        &--folded {
-            padding: 0;
-
-            border-width: 2pt;
-
-            &__inner {
-                max-height: 0;
-            }
         }
     }
 }

@@ -1,7 +1,7 @@
 div.picture-switch
     img.picture-switch__picture(ng-repeat="(idx, picture) in getPictures()", ng-src='{{picture}}', ng-style='getPictureStyle(idx)')
     div.picture-switch__selector--wrapper
-        span.picture-switch__selector.picture-switch__selector(ng-repeat="(idx, label) in getLabels()", ng-click="select(idx)", ng-class="getSwitchClass(idx)")
+        span.picture-switch__selector.picture-switch__selector.text-center(ng-repeat="(idx, label) in getLabels()", ng-click="select(idx)", ng-class="getSwitchClass(idx)")
             img(ng-src='{{ getSwitchSrc(idx) }}')
             br
             span(ng-bind-html="label")

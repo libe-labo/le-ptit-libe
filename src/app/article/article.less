@@ -21,9 +21,7 @@
             width: 70%;
             margin-left: .5em;
 
-            font-family: 'libesansrond-regular', sans-serif;
             font-size: 2.7em;
-            text-transform: uppercase;
             line-height: 1.1em;
             letter-spacing: .05em;
         }
@@ -31,10 +29,11 @@
 
     p, ul, #quiz, table, .as-p {
         max-width: 640px;
-        margin: 0 auto 2em auto;
+        margin: 0 0 2em 0;
         padding: 0 2em;
+        .center-block();
 
-        .box-sizing(border-box);
+        box-sizing: border-box;
 
         font-size: 1.3em;
 
@@ -59,7 +58,6 @@
 
         li {
             margin: 1em 0;
-            // padding-left: 2.5em;
             background-image: url(/assets/images/puce-punaise-bleue.svg);
             background-repeat: no-repeat;
             background-size: 2em auto;
@@ -75,10 +73,8 @@
             width: 100%;
 
             &.illustration {
-                display: block;
-
                 max-width: 85%;
-                margin: 0 auto;
+                .center-block()
             }
         }
 
@@ -89,8 +85,8 @@
             width: 30%;
             margin: 1em 1em .5em 0;
 
-            text-align:left;
-            font-size:.8em;
+            text-align: left;
+            font-size: .8em;
         }
 
         .legend {
@@ -101,19 +97,6 @@
                 font-size: .6em;
             }
         }
-
-        .uppercase {
-            text-transform: uppercase;
-        }
-
-    .libesansrond {
-            font-family: 'libesansrond-regular', sans-serif;
-            letter-spacing: 0.07em;
-        }
-
-        .largefont {
-            font-size: 2em;
-        }
     }
 }
 
@@ -122,16 +105,12 @@
         padding-bottom: 2em !important;
         margin-bottom: 1em;
 
-        &__title {
-            span {
-                font-size: 1.4em;
-            }
+        &__title span {
+            font-size: 1.4em;
         }
 
-        &__content {
-            .exergue {
-                width: 45%;
-            }
+        &__content .exergue {
+            width: 45%;
         }
 
         p {

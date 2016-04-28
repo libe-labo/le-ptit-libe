@@ -1,13 +1,11 @@
-div.menuu--wrapper(ng-controller="MenuController")
-    div.row.release-title.color2-fg
-        div
-            p N°{{releaseN}}
-        div
-            p.release-title__title(ng-bind-html="getTitle()")
-        span.release-title__date.color-fg avril 2016
-    div.centered.menuu
-        div.menuu__item(ng-repeat='idx in getVignetteRepetition(row)')
+div(ng-controller="MenuController")
+    div.release-title.libesansrond.color2-fg
+        div.pull-left
+            p.condensed N°{{releaseN}}
+        div.pull-left
+            p.release-title__title.text-uppercase(ng-bind-html="getTitle()")
+        span.release-title__date.syntheselibeweb.color-fg avril 2016
+    div.text-center.center-block.menuu
+        div.menuu__item.libesansrond.text-left(ng-repeat='idx in getVignetteRepetition(row)')
             vignette(image-src="getVignetteImage(idx)", article-id="idx")
             a.color2-fg(ng-bind-html="getTitle(idx)", ui-sref="article({ article : idx })", ui-sref-opts="{ reload : true }")
-    div.row
-        p.centered(style="margin-top:5em;")

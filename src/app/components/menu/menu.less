@@ -4,13 +4,7 @@
     flex-wrap: wrap;
 
     max-width: 640px;
-    margin: 0 auto;
-
-    &--wrapper {
-        .row {
-            margin: 0;
-        }
-    }
+    margin-bottom: 5em;
 
     &__item {
         width: 30%;
@@ -18,10 +12,7 @@
         margin-bottom: 1em;
         padding: 0 .7em;
 
-        font-family: 'libesansrond-regular', sans-serif;
         font-size: 1.3em;
-        letter-spacing: 0.07em;
-        text-align: left;
 
         vignette {
             margin-bottom: .5em;
@@ -62,7 +53,6 @@
 
     width: auto !important;
 
-    font-family: 'libesansrond-regular', sans-serif;
     font-size: 7em;
     line-height: .9em;
 
@@ -72,27 +62,20 @@
         bottom: 6.5em;
 
         font-size: .15em;
-        font-family: 'syntheselibeweb';
         font-weight: normal;
         letter-spacing: .05em;
         line-height: 0;
     }
 
-    > div {
-        float: left;
+    > div:first-child {
+        padding-right: .2em;
 
-        &:first-child {
-            padding-right: .2em;
+        border-right: 3pt solid #000;
 
-            border-right: 3pt solid #000;
+        font-weight: bold;
 
-            font-family: 'libesansrond-condensed', sans-serif;
-            font-weight: bold;
-            letter-spacing: 0.07em;
-
-            p {
-                margin-bottom: 0;
-            }
+        p {
+            margin-bottom: 0;
         }
     }
 
@@ -100,7 +83,6 @@
         padding-left: .4em;
 
         font-size: .5em;
-        text-transform: uppercase;
         line-height: .9em;
         letter-spacing: .05em;
     }
@@ -113,10 +95,8 @@
         font-size: 3.5em;
     }
 
-    .menuu {
-        &__item {
-            font-size: 1em;
-        }
+    .menuu &__item {
+        font-size: 1em;
     }
 
     .mail {

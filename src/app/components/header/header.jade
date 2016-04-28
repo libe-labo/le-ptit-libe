@@ -1,8 +1,8 @@
-div.header(ng-controller='HeaderController')
-    h1
+div.header.text-center(ng-controller='HeaderController')
+    h1.hidden
         | P'tit Libé
     a(ui-sref='menu({ release : getCurrentRelease() })')
         img(alt="Le P'tit Libé", src="assets/images/logo.svg")
     div.header__intro(ng-class='getIntroClass()')
-        p.header__intro__inner(ng-class='getIntroInnerClass()')
+        p.header__intro__inner.text-left(ng-class='getIntroInnerClass()')
             | Lorem ipsum dolor sit amet
