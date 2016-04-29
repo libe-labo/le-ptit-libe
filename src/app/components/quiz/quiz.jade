@@ -13,6 +13,7 @@ div.as-p.quiz
                 span.quiz__next--ok.color-fg(ng-if='isCurrentQuestionOk()') Oui&nbsp;!
                 span.quiz__next--ko.bad(ng-if='!isCurrentQuestionOk()') Non&nbsp;!
                 |  Passe à la question suivante
+                img(src='assets/images/components/fleche-droite.svg')
     div.quiz--ended.libesansrond(ng-if="hasEnded()")
         div.quiz__score.center-block(ng-style='getBackgroundColor()')
             span {{ getScore() }}/{{ quizLength }}
