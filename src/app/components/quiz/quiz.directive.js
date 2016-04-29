@@ -94,11 +94,21 @@ class QuizController {
     answerCurrentQuestion (answerIdx) {
         if (isNaN(parseInt(this.getCurrentQuestion().answered))) {
             this.quiz[this.current].answered = answerIdx;
+
+            // Update arrows' color
+            this.changeArrowColor(answerIdx, '#c6c6c6');
+            this.changeArrowColor(
+                this.quiz[this.current].ok,
+                this.$scope.getBackgroundColor()['background-color']
+            );
         }
     }
 
     nextQuestion () {
         if (!isNaN(parseInt(this.getCurrentQuestion().answered))) {
+            this.changeArrowColor(0, '');
+            this.changeArrowColor(1, '');
+            this.changeArrowColor(2, '');
             ++this.current;
         }
     }
@@ -137,5 +147,11 @@ class QuizController {
             this.quiz[i].answered = false;
         }
         this.current = 0;
+    }
+
+    changeArrowColor (idx, color) {
+        $($('.quiz li object').eq(idx)[0].contentDocument).find('.st12').css({
+            fill: color
+        });
     }
 }

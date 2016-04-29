@@ -5,7 +5,9 @@ div.as-p.quiz
         div.quiz__question.libesansrond(ng-bind-html='getCurrentQuestion().question')
         div.quiz__answers
             li(ng-repeat='(idx, answer) in getCurrentQuestion().answers', ng-click='answerCurrentQuestion(idx)', ng-class='getAnswerClass(idx)')
-                object(type='image/svg+xml', data='assets/images/components/quiz/fleche1.svg')
+                object(ng-if='idx === 0', type='image/svg+xml', data='assets/images/components/quiz/fleche1.svg')
+                object(ng-if='idx === 1', type='image/svg+xml', data='assets/images/components/quiz/fleche2.svg')
+                object(ng-if='idx === 2', type='image/svg+xml', data='assets/images/components/quiz/fleche3.svg')
                 span(ng-bind-html='answer')
             a.quiz__next.text-center(ng-if='isCurrentQuestionAnswered()', ng-click='nextQuestion()')
                 span.quiz__next--ok.color-fg(ng-if='isCurrentQuestionOk()') Oui&nbsp;!
