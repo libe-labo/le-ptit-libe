@@ -14,6 +14,7 @@ import ResourcesController from './resources/resources.controller';
 import NewsletterController from './newsletter/newsletter.controller';
 
 import { VignetteDirective } from './components/vignette/vignette.directive';
+import { QuizDirective } from './components/quiz/quiz.directive';
 import { PictureSwitchDirective } from './components/pictureSwitch/pictureSwitch.directive';
 import { AccordionnDirective } from './components/accordionn/accordionn.directive';
 
@@ -34,6 +35,7 @@ angular.module('ptitlibe', ['angulartics', 'angulartics.google.analytics',
        .controller('ResourcesController', ResourcesController)
        .controller('NewsletterController', NewsletterController)
 
-       .directive('pictureswitch', PictureSwitchDirective)
        .directive('vignette', VignetteDirective)
+       .directive('quiz', QuizDirective)
+       .directive('pictureswitch', PictureSwitchDirective)
        .directive('accordionn', AccordionnDirective);

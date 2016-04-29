@@ -1,0 +1,24 @@
+div.as-p.quiz
+    div(ng-if='!hasEnded()')
+        div.text-right
+            | {{ getCurrentQuestion().idx + 1 }}/{{ quizLength }}
+        div.quiz__question.libesansrond(ng-bind-html='getCurrentQuestion().question')
+        div.quiz__answers
+            li(ng-repeat='(idx, answer) in getCurrentQuestion().answers', ng-click='answerCurrentQuestion(idx)', ng-class='getAnswerClass(idx)')
+                object(type='image/svg+xml', data='assets/images/components/quiz/fleche1.svg')
+                span(ng-bind-html='answer')
+            a.quiz__next.text-center(ng-if='isCurrentQuestionAnswered()', ng-click='nextQuestion()')
+                span.quiz__next--ok.color-fg(ng-if='isCurrentQuestionOk()') Oui&nbsp;!
+                span.quiz__next--ko.bad(ng-if='!isCurrentQuestionOk()') Non&nbsp;!
+                |  Passe à la question suivante
+    div.quiz--ended.libesansrond(ng-if="hasEnded()")
+        div.quiz__score.center-block(ng-style='getBackgroundColor()')
+            span {{ getScore() }}/{{ quizLength }}
+        p.text-center.text-uppercase
+            br
+            span.lead.color-fg {{ getResultSentence(0) }}
+            br
+            span(ng-bind-html='getResultSentence(1)')
+            br
+            br
+            a(ng-click='restart()') Recommencer

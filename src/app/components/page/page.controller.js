@@ -13,6 +13,7 @@ class PageController {
         $scope.getBodyStyle = this.getBodyStyle.bind(this);
         $scope.shareOnFacebook = this.shareOnFacebook.bind(this);
         $scope.shareOnTwitter = this.shareOnTwitter.bind(this);
+        $scope.getBackgroundColor =  this.getBackgroundColor.bind(this);
 
         let selectorsToColor = {
             'body': ['background-color', 'dark'],
@@ -71,6 +72,12 @@ class PageController {
                    ' ' + url + ' via @LePtitLibe',
             link = 'https://twitter.com/intent/tweet?original_referer=&text=' + text;
         window.open(link, '', 'width=575,height=400,menubar=no,toolbar=no');
+    }
+
+    getBackgroundColor () {
+        return {
+            'background-color': this.colors.light
+        };
     }
 }
 
