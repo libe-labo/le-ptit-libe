@@ -54,16 +54,17 @@
     ul {
         list-style-type: none;
 
-        padding-left: 5em;
+        padding-left: 3em;
 
         li {
             margin: 1em 0;
-            background-image: url(/assets/images/puce-punaise-bleue.svg);
+            padding-left: 1.8em;
+            background-image: url(../assets/images/puce-punaise.svg);
             background-repeat: no-repeat;
-            background-size: 2em auto;
+            background-size: auto 100%;
 
             &:nth-of-type(odd) {
-                background-image: url(/assets/images/puce-punaise-rose.svg);
+                background-image: url(../assets/images/puce-punaise-bis.svg);
             }
         }
     }
@@ -87,6 +88,14 @@
 
             text-align: left;
             font-size: .8em;
+
+            &.small {
+                width: 20%;
+            }
+
+            &.large {
+                width: 50%;
+            }
         }
 
         .legend {

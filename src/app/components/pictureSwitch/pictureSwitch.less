@@ -18,6 +18,10 @@
     }
 
     &__selector {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: auto;
+
         cursor: pointer;
 
         img {
@@ -28,11 +32,9 @@
             font-size: .8em;
         }
 
-        transform: translate(-50%, 0);
-
         &--wrapper {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
 
             margin-top: 1em;
         }
