@@ -31,6 +31,7 @@ class PictureSwitch {
         $scope.selector = 0;
 
         $scope.getPictures = this.getPictures.bind(this);
+        $scope.isPictureOrTemplate = this.isPictureOrTemplate.bind(this);
         $scope.getPictureStyle = this.getPictureStyle.bind(this);
         $scope.getLabels = this.getLabels.bind(this);
         $scope.getSwitchSrc = this.getSwitchSrc.bind(this);
@@ -42,9 +43,14 @@ class PictureSwitch {
         return this.pictures;
     }
 
+    isPictureOrTemplate (idx) {
+        return !_.endsWith(this.pictures[idx], '\.html');
+    }
+
     getPictureStyle (idx) {
         return {
-            opacity: this.$scope.selector === idx ? 1 : 0
+            opacity: this.$scope.selector === idx ? 1 : 0,
+            'pointer-events': this.$scope.selector === idx ? 'all' : 'none'
         };
     }
 
