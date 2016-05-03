@@ -13,6 +13,14 @@
 * [Jade](https://github.com/jadejs/jade)
 * ...
 
+# Installation / Utilisation (dev)
+
+* `npm install -g gulp-cli`
+* `npm install`
+* `bower install`
+* `gulp serve` (démarre le serveur de développement) || `gulp clean && build` (construit la version de production dans `dist/`)
+
+
 ## License
 
 > The MIT License (MIT)
