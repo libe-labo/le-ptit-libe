@@ -6,7 +6,6 @@ node_modules/
 bower_components/
 dist/
 
-src/app/articles/*.html
 src/assets/**/*.json
 src/assets/**/*.tsv
 src/assets/images/menu/*.svg

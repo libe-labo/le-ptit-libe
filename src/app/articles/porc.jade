@@ -1,0 +1,40 @@
+object#cochon(type="image/svg+xml", data="assets/images/cochon-morceaux.svg")
+div#meatName1 &nbsp;
+script(type="text/javascript").
+    document.querySelector('#cochon').addEventListener('load', function() {
+        var meatName = document.querySelector('#meatName1'),
+            svg = this.contentDocument;
+            
+        var colors = { off: '#F7B5AC', on: '#EB5C5F' };
+
+        [].slice.call(svg.querySelectorAll('*[id]')).forEach(function(element) {
+            if (['path', 'polygon'].indexOf(element.tagName) >= 0) {
+                var name = element.getAttribute('id').replace(/_\d+_/g, '').replace(/_/g, ' ');
+                element.addEventListener('mouseenter', function() {
+                    meatName.innerHTML = name;
+                    element.style['fill'] = colors.on;
+                    if (element.classList.contains('bis1')) {
+                        [].slice.call(svg.querySelectorAll('.bis1')).forEach(function(e) {
+                            e.style['fill'] = colors.on;
+                        });
+                    } else if (element.classList.contains('bis2')) {
+                        [].slice.call(svg.querySelectorAll('.bis2')).forEach(function(e) {
+                            e.style['fill'] = colors.on;
+                        });
+                    }
+                });
+                element.addEventListener('mouseleave', function() {
+                    meatName.innerHTML = '&nbsp;';
+                    element.style['fill'] = colors.off;
+                    [].slice.call(svg.querySelectorAll('.bis1')).forEach(function(e) {
+                        e.style['fill'] = colors.off;
+                    });
+                    [].slice.call(svg.querySelectorAll('.bis2')).forEach(function(e) {
+                        e.style['fill'] = colors.off;
+                    });
+                });
+
+                element.style['fill'] = colors.off;
+            }
+        });
+    });

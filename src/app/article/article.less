@@ -64,9 +64,31 @@
             background-size: auto 1.3em;
 
             &:nth-of-type(odd) {
-                background-image: url(../assets/images/puce-punaise-bis.svg);
+                // background-image: url(../assets/images/puce-punaise-bis.svg);
             }
         }
+    }
+
+    #meatName1, #meatName2, #meatName3 {
+        display: inline-block;
+
+        position: relative;
+        left: 50%;
+
+        width: 75%;
+        margin: 1em auto;
+        padding: 1em;
+
+        background-color: #FF5B5B;
+
+        border-radius: 1em;
+
+        color: #ffffff;
+        .text-uppercase();
+        .libesansrond();
+        .text-center();
+
+        transform: translateX(-50%);
     }
 
     &__content {

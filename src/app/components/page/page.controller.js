@@ -67,9 +67,7 @@ class PageController {
 
     shareOnTwitter () {
         var url = encodeURIComponent(window.location.origin + window.location.pathname),
-            text = 'Le P\'tit Libé n°' + this.$scope.releaseN +
-                   ' : ' + $('.release-title__title').html().replace(/<br>/g, ' ') +
-                   ' ' + url + ' via @LePtitLibe',
+            text = 'De la vache au steak : d’où vient la viande ? ' + url + ' via @LePtitLibe',
             link = 'https://twitter.com/intent/tweet?original_referer=&text=' + text;
         window.open(link, '', 'width=575,height=400,menubar=no,toolbar=no');
     }

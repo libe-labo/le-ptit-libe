@@ -1,0 +1,43 @@
+object#poulet(type="image/svg+xml", data="assets/images/coq-morceaux.svg")
+div#meatName2 &nbsp;
+script(type="text/javascript").
+    document.querySelector('#poulet').addEventListener('load', function() {
+        var meatName = document.querySelector('#meatName2'),
+            svg = this.contentDocument;
+            
+        var colors = { off: '#F7B5AC', on: '#EB5C5F' };
+
+        [].slice.call(svg.querySelectorAll('*[id]')).forEach(function(element) {
+            if (['path', 'polygon', 'g'].indexOf(element.tagName) >= 0) {
+                var name = element.getAttribute('id').replace(/_\d+_/g, '').replace(/_/g, ' ');
+                element.addEventListener('mouseenter', function() {
+                    meatName.innerHTML = name;
+                    if (element.tagName === 'g') {
+                        [].slice.call(element.querySelectorAll('.st1')).forEach(function(element) {
+                            element.style['fill'] = colors.on;
+                        });
+                    } else {
+                        element.style['fill'] = colors.on;
+                    }
+                });
+                element.addEventListener('mouseleave', function() {
+                    meatName.innerHTML = '&nbsp;';
+                    if (element.tagName === 'g') {
+                        [].slice.call(element.querySelectorAll('.st1')).forEach(function(element) {
+                            element.style['fill'] = colors.off;
+                        });
+                    } else {
+                        element.style['fill'] = colors.off;
+                    }
+                });
+
+                if (element.tagName === 'g') {
+                    [].slice.call(element.querySelectorAll('.st1')).forEach(function(element) {
+                        element.style['fill'] = colors.off;
+                    });
+                } else {
+                    element.style['fill'] = colors.off;
+                }
+            }
+        });
+    });
