@@ -11,7 +11,6 @@
 * [Bootstrap](https://github.com/twbs/bootstrap)
 * [Less.js](https://github.com/less/less.js)
 * [Jade](https://github.com/jadejs/jade)
-* [Pym.js](https://github.com/nprapps/pym.js)
 * ...
 
 ## License

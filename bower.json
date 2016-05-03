@@ -12,7 +12,6 @@
     "animate.css": "~3.3.0",
     "bootstrap": "~3.3.4",
     "lodash": "~3.10.1",
-    "pym.js": "~0.4.5",
     "zeptojs": "~1.1.6",
     "angulartics": "~0.20.1",
     "angulartics-google-analytics": "~0.1.1"
