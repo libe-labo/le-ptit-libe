@@ -11,8 +11,8 @@
 
         box-sizing: border-box;
 
-        background-image: url(../assets/images/components/quiz/cadre.svg);
-        background-size: 100%;
+        background-image: url(../assets/images/components/quiz/cadre.png);
+        background-size: 100% 100%;
         background-repeat: no-repeat;
 
         font-size: 1.4em;
@@ -110,6 +110,18 @@
             color: inherit;
 
             cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .quiz {
+        &__question {
+            font-size: 1.1em;
+        }
+
+        &__answers {
+            margin-top: -5%;
         }
     }
 }
