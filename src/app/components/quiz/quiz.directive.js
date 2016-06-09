@@ -85,7 +85,7 @@ class QuizController {
         let ok = answerIdx === this.getCurrentQuestion().ok,
             isTheOneAnswered = answerIdx === this.getCurrentQuestion().answered;
         return {
-            'color-fg': this.isCurrentQuestionAnswered() && ok,
+            'color2-fg': this.isCurrentQuestionAnswered() && ok,
             'bad': this.isCurrentQuestionAnswered() && !ok && isTheOneAnswered,
             'strikethrough': this.isCurrentQuestionAnswered() && !ok && isTheOneAnswered
         };

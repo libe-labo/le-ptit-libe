@@ -1,0 +1,54 @@
+.pronostic {
+    object {
+        margin-bottom: 2em;
+    }
+
+    &__finale {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
+
+        &__team {
+            flex-grow: 0;
+            flex-shrink: 0;
+            width: 49%;
+
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+
+            &--separator {
+                width: 10%;
+            }
+
+            object {
+                width: 60%;
+                margin: 1em 0;
+            }
+        }
+    }
+
+    &__winner {
+        object {
+            width: 20%;
+            margin: 1em 0;
+        }
+    }
+}
+
+.concours {
+    padding: 0 3em;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    a {
+        display: inline-block;
+
+        width: 40%;
+
+        cursor: pointer;
+    }
+}

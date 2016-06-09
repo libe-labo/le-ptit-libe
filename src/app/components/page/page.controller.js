@@ -4,7 +4,7 @@ class PageController {
     constructor ($scope, $stateParams, $state) {
         'ngInject';
 
-        $scope.releaseN = 9;
+        $scope.releaseN = 10;
 
         this.$stateParams = $stateParams;
         this.$state = $state;
@@ -16,8 +16,7 @@ class PageController {
         $scope.getBackgroundColor =  this.getBackgroundColor.bind(this);
 
         let selectorsToColor = {
-            'body': ['background-color', 'dark'],
-            'body .color-fg': ['color', 'light'],
+            'body': ['background-color', 'light'],
             'body .container > div': ['background-color', 'cartel']
         };
         this.colors = {};
@@ -33,16 +32,17 @@ class PageController {
                         }
                     }
 
-                    if (Object.keys(this.colors).length >= 3) { break; }
+                    if (Object.keys(this.colors).length >= 2) { break; }
                 }
             }
         }
+        this.colors.dark = '#cb9932';
 
         this.$scope = $scope;
     }
 
     getVignetteColor () {
-        return this.colors.light;
+        return '#264c87';
     }
 
     getBodyStyle () {
@@ -68,7 +68,7 @@ class PageController {
     shareOnTwitter () {
         var url = encodeURIComponent(window.location.origin + window.location.pathname),
             text = 'Le P\'tit Libé n°' + this.$scope.releaseN +
-                   ' : ' + $('.release-title__title').html().replace(/<br>/g, ' ') +
+                   ' : L\'Euro de foot expliqué aux enfants' +
                    ' ' + url + ' via @LePtitLibe',
             link = 'https://twitter.com/intent/tweet?original_referer=&text=' + text;
         window.open(link, '', 'width=575,height=400,menubar=no,toolbar=no');

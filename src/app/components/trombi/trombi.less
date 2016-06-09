@@ -1,0 +1,54 @@
+.trombi {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    &__element {
+        flex-grow: 0;
+        flex-shrink: 0;
+
+        width: 22%;
+        margin-bottom: 1.5em;
+
+        cursor: pointer;
+
+        &.open {
+            width: 100%;
+
+            img {
+                width: 22%;
+            }
+
+            p {
+                float: right;
+
+                width: 75%;
+                margin: 0;
+                padding: .5em 1em;
+
+                box-sizing: border-box;
+
+                background-color: #cb9932;
+
+                &.blue {
+                    background-color: #264c87;
+
+                    color: #ffffff;
+                }
+
+                font-size: .9em;
+
+                small {
+                    font-size: .7em;
+                }
+            }
+        }
+    }
+}

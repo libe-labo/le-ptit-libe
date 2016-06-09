@@ -1,0 +1,23 @@
+div.as-p.trombi
+    div.trombi__row(ng-repeat="(k, d) in getData()")
+        div.trombi__element(ng-repeat="d in d | orderBy:'-open'", ng-click="clickedOn(d.id, k)", ng-class="{'open': d.open}")
+            img(ng-src="assets/images/trombi/{{d.pic}}")
+            p(ng-class="{'hidden': !d.open, 'blue': !d.text.length}")
+                strong.libesansrond.text-uppercase {{ d.name }}
+                br
+                strong Poste
+                |  {{ d.position }}
+                br
+                strong Age
+                |  {{ d.age }}&nbsp;ans
+                br
+                strong Club
+                |  {{ d.club }}
+                br
+                strong Sélections en équipe de France
+                |  {{ d.selections }}
+                br
+                small {{ d.credits }}
+                br
+                br
+                span(ng-bind-html="d.text")
