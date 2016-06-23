@@ -20,8 +20,41 @@
 * `bower install`
 * `gulp serve` (démarre le serveur de développement) || `gulp clean && build` (construit la version de production dans `dist/`)
 
+## Plus de détails
 
-## License
+Welcome to the neverending hack 💀  
+Chaque numéro est dans sa propre branche. Les modifications générales sont toujours mergées dans le `master`.  
+
+* `/src/app/main/` → Page d'accueil
+* `/src/app/article/` → Page de chapitre
+* `/src/app/articles/` → Contenu des pages chapitre (.gitignore sur le `master`)
+* `/src/app/components/` → Composants utilisés dans les chapitres
+* `/src/app/newsletter/` → Page d'inscription à la newsletter, faite un peu dans l'urgence🚨 à l'époque
+* `/src/app/index.less` → Fichier de style principal. La définition des couleurs du numéro s'y fait tout en haut  
+⚠️ c'est utilisé par `/src/app/components/page/page.controller.js`
+* `/assets/titles.json` → Description des titres (.gitignore sur le `master`)
+```json
+{
+    "title": "Titre du numéro",
+    "chapters": [
+        "Titre du chapitre 1",
+        "...",
+        "Quiz"
+    ]
+}
+```
+* `/assets/quiz.tsv` → Description du quiz (.gitignore sur le `master`)  
+En `.tsv` parce que tiré d'un spreadsheet (donc éditable facilement par n'importe qui).
+
+| Titre | Bonne reponse | Reponse 1   | Reponse 2 | Reponse 3 |
+| ----- | ------------- | ----------- | --------- | --------- |
+| Foo   | 1             | Lorem ipsum | dolor     | sit amet  |
+
+* `/assets/pdf/le-ptit-libe.pdf` → PDF du lien «imprime-moi» (.gitignore sur le `master`)
+* `/assets/images/menu/` → Vignettes du menu (.gitignore sur le `master`)  
+Les éléments SVG des vignettes ayant un attribut `id` seront coloriés au load de la page.
+
+# License
 
 > The MIT License (MIT)
 >
