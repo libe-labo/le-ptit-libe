@@ -42,7 +42,19 @@ class PageController {
     }
 
     getVignetteColor () {
+        return this.getSecColor();
+    }
+
+    getCartelColor () {
+        return this.colors.cartel;
+    }
+
+    getColor () {
         return this.colors.light;
+    }
+
+    getSecColor () {
+        return this.colors.sec;
     }
 
     getBodyStyle () {
